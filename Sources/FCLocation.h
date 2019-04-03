@@ -49,16 +49,32 @@ extern const CLLocationDirection FCNorthByNorthWest;
 
 #pragma mark - Usefull Distances
 
-extern const CLLocationDistance FCMeter; // 1;
-extern const CLLocationDistance FCKiloMeter; // 1000;
-extern const CLLocationDistance FCEarthRadius; // = 6378135;
-extern const CLLocationDistance FCEarthSemiMinorAxis; // WGS 84
-extern const CLLocationDistance FCEarthFlattening; // WGS 84
-extern const CLLocationDistance FCGeostationayAltitude; // = 35786000;
-extern const CLLocationDistance FCAstronomicalUnit; // = 149597871000;
+/*! @brief One meter */
+extern const CLLocationDistance FCMeter;
 
-extern const CLLocationDistance FCLightSecond; // = 299792458
-extern const CLLocationDistance FCLightYear; // = 9460730472580800;
+/*! @brief One Thousand Meters (1 Km) */
+extern const CLLocationDistance FCKiloMeter;
+
+/*! @brief The Radius of the Earth, in Meters per WGS 84: 6,378,137.0 Meters */
+extern const CLLocationDistance FCEarthRadius;
+
+/*! @brief the Semi-Minor Axis of the Earh, in Meters per WGS 84: 6,356,752.314245 Meters */
+extern const CLLocationDistance FCEarthSemiMinorAxis;
+
+/*! @brief the 1/F Flattening of the Earth per WGS 84  298.257223563 */
+extern const CLLocationDistance FCEarthFlattening;
+
+/*! @breif the Altitude of the Geostaionaly Clark Orbits: 35,786 Kilometers */
+extern const CLLocationDistance FCGeostationayAltitude;
+
+/*! @brief the Mean distance between the Earth and the Sun: 149,597,870,700 Meters */
+extern const CLLocationDistance FCAstronomicalUnit;
+
+/*! @brief the distance a photon travels in vacuum per second: 299,792,458 Meters */
+extern const CLLocationDistance FCLightSecond;
+
+/*! @brief the distance a photon travels in vacuum per Julian year: 9,460,730,472,580,800 Meters */
+extern const CLLocationDistance FCLightYear;
 
 #pragma mark - Location Types
 
@@ -84,18 +100,18 @@ extern NSString* const FCLocationGeocodingErrorKey; // geocoding error
 
 #pragma mark - Functions
 
-/*! @returns a random CLLocationDirection between 0 and 360 or FCDisoriented */
+/*! @return a random CLLocationDirection between 0 and 360 or FCDisoriented */
 extern CLLocationDirection FCRandomDirection(void);
 
-/*! @returns the CLLocationDirection from the origin to the destination or FCDisoriented */
+/*! @return the CLLocationDirection from the origin to the destination or FCDisoriented */
 extern CLLocationDirection FCBearingFrom(CLLocationCoordinate2D origin, CLLocationCoordinate2D destination);
 
-/*! @returns a new CLLocationCoordinate2D at the specified distance and bearing from the start point */
+/*! @return a new CLLocationCoordinate2D at the specified distance and bearing from the start point */
 extern CLLocationCoordinate2D FCCoordincateAtDistanceAndBearingFrom(CLLocationCoordinate2D start, CLLocationDistance distance, CLLocationDirection bearing);
 
-@class FCLocationSource;
-
 #pragma mark -
+
+@class FCLocationSource;
 
 /*! @class legacy for un-archiving old FCLocation instances */
 @interface FCCoordinate : NSObject <NSCopying, NSCoding>
@@ -108,7 +124,7 @@ extern CLLocationCoordinate2D FCCoordincateAtDistanceAndBearingFrom(CLLocationCo
 
 #pragma mark -
 
-/*! @brief FCLocation extentions to CLLocation */
+/*! @brief FCLocation extensions to CLLocation */
 @interface CLLocation (FCLocation)
 
 // boxing properties for the underlying CLLocation
@@ -191,4 +207,4 @@ extern CLLocationCoordinate2D FCCoordincateAtDistanceAndBearingFrom(CLLocationCo
 
 @end
 
-/* Copyright 2010-2018, Alf Watt (alf@istumbler.net) All rights reserved. */
+/* Copyright 2010-2019, Alf Watt (alf@istumbler.net) All rights reserved. */

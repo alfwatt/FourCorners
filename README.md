@@ -15,26 +15,11 @@ Objective-C Location & Navigation Utilites
 - <a href="#todo">To Do Items</a>
 - <a href="#license">MIT License</a>
 
-<a id="classes"></a>
-## Classes
-
-- <a id="FCAnnotation" href="./FCAnnotation.h">`FCAnnotation`</a>
-- <a id="FCFormatters" href="./FCFormatters">`FCFormatters`</a>
-- <a id="FCLocationSource" href="./FCLocationSource">`FCLocationSource`</a>
-- <a id="FCCoreLocationSource" href="./FCCoreLocationSource">`FCCoreLocationSource`</a>
-
-<a id="functions"></a>
-## Functions
-
-<a id="protocols"></a>
-## Protocols
-
-<a id="categories"></a>
-## Categories
-
-
 <a id="goals"></a>
 ## Goals
+
+FourCorners provides utilites to make working with CoreLocation easier along with Categories and Functions which make
+displaying location information easier and more consistent.
 
 <a id="support"></a>
 ## Support FourCorners Development!
@@ -42,6 +27,31 @@ Objective-C Location & Navigation Utilites
 Are you using FourCorners in your apps? Would you like to help support the project and get a sponsor credit?
 
 Visit our [Patreon Page](https://www.patreon.com/istumblerlabs) and patronize us in exchange for great rewards!
+
+<a id="classes"></a>
+## Classes
+
+- <a id="FCAnnotation" href="./FCAnnotation.h">`FCAnnotation`</a>
+- <a id="FCFormatters" href="./FCFormatters.h">`FCFormatters`</a>
+- <a id="FCLocation" href="./FCLocation.h">`FCLocation`</a>
+- <a id="FCLocationSource" href="./FCLocationSource.h">`FCLocationSource`</a>
+    - <a id="FCCoreLocationSource" href="./FCCoreLocationSource.h">`FCCoreLocationSource`</a>
+
+<a id="functions"></a>
+## Functions
+
+<a id="FCLocation-Functions" href="./FCLocation.h">`FCLocation`</a> provides a few public Functions:
+
+`extern CLLocationDirection FCRandomDirection(void);`
+
+`extern CLLocationDirection FCBearingFrom(CLLocationCoordinate2D origin, CLLocationCoordinate2D destination);`
+
+`extern CLLocationCoordinate2D FCCoordincateAtDistanceAndBearingFrom(CLLocationCoordinate2D start, CLLocationDistance distance, CLLocationDirection bearing);`
+
+<a id="categories"></a>
+## Categories
+
+<a id="FCLocation-Category" href="./FCLocation.h">`FCLocation`</a> defines a number of extentions to FCLocation.
 
 <a id="todo"></a>
 ## To Do Items
