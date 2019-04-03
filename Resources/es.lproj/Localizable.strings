@@ -1,0 +1,17 @@
+/* The error for not being able to connect to host(%@) because of error(%s) */
+"Could not connect to %@: %s" = "Could not connect to %1$@: %2$s";
+
+/* No comment provided by engineer. */
+"Error creating socket: %s" = "Error creating socket: %s";
+
+/* The error for not being able to read from host(%@) because of error(%s) */
+"Error reading from %@: %s" = "Error reading from %1$@: %2$s";
+
+/* Device type returned from FCSocketDevice.m */
+"GPS Server" = "GPS Server";
+
+/* No comment provided by engineer. */
+"Serial Port" = "Serial Port";
+
+/* The name for a host(%@) whose name cannot be resolved */
+"Unknown host: %@" = "Unknown host: %@";

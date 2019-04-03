@@ -1,0 +1,699 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		75087D441AB80B4B00D47244 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75087D431AB80B4B00D47244 /* AddressBook.framework */; };
+		753DDCA61043B71200264D64 /* FCCoreLocationSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 753DDC951043B71200264D64 /* FCCoreLocationSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		753DDCA71043B71200264D64 /* FCCoreLocationSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 753DDC961043B71200264D64 /* FCCoreLocationSource.m */; };
+		75576BED08FCCAA300D3D813 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 75576BEC08FCCAA300D3D813 /* Localizable.strings */; };
+		7578305E20F516BA00159E5F /* KitBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7578305720F516A900159E5F /* KitBridge.framework */; };
+		757830D620F54BBF00159E5F /* FourCorners.h in Headers */ = {isa = PBXBuildFile; fileRef = 7585A83B1D307C4200F5C869 /* FourCorners.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		757830D720F54BBF00159E5F /* FCLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 7585A8381D307C4200F5C869 /* FCLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		757830D820F54BBF00159E5F /* FCFormatters.h in Headers */ = {isa = PBXBuildFile; fileRef = 7585A8341D307C4200F5C869 /* FCFormatters.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		757830D920F54BBF00159E5F /* FCLocationSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 7585A8391D307C4200F5C869 /* FCLocationSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		757830DC20F54BBF00159E5F /* FCAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 75F2C1331F955BB800D4E241 /* FCAnnotation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		757830DD20F54BBF00159E5F /* geohash.h in Headers */ = {isa = PBXBuildFile; fileRef = 75FF3DA41F6A39770035DE7D /* geohash.h */; };
+		757830DE20F54BBF00159E5F /* FCCoreLocationSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 753DDC951043B71200264D64 /* FCCoreLocationSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		757830E020F54BBF00159E5F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 75576BEC08FCCAA300D3D813 /* Localizable.strings */; };
+		757830E220F54BBF00159E5F /* FCLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7585A8361D307C4200F5C869 /* FCLocation.m */; };
+		757830E320F54BBF00159E5F /* FCFormatters.m in Sources */ = {isa = PBXBuildFile; fileRef = 7585A8351D307C4200F5C869 /* FCFormatters.m */; };
+		757830E520F54BBF00159E5F /* FCCoreLocationSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 753DDC961043B71200264D64 /* FCCoreLocationSource.m */; };
+		757830E620F54BBF00159E5F /* geohash.c in Sources */ = {isa = PBXBuildFile; fileRef = 75FF3DA31F6A39770035DE7D /* geohash.c */; };
+		757830E720F54BBF00159E5F /* FCAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F2C1341F955BB800D4E241 /* FCAnnotation.m */; };
+		757830E920F54BBF00159E5F /* FCLocationSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7585A83A1D307C4200F5C869 /* FCLocationSource.m */; };
+		757830EC20F54BBF00159E5F /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75F566991039052C00969F4B /* IOKit.framework */; };
+		757830EE20F54BBF00159E5F /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75087D431AB80B4B00D47244 /* AddressBook.framework */; };
+		757830EF20F54BBF00159E5F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75975DBE15B0BA020081E870 /* Foundation.framework */; };
+		757830F020F54BBF00159E5F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75F566881039051F00969F4B /* CoreLocation.framework */; };
+		7578310120F54DE900159E5F /* KitBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7578305920F516A900159E5F /* KitBridge.framework */; };
+		7585A83F1D307C4200F5C869 /* FCFormatters.h in Headers */ = {isa = PBXBuildFile; fileRef = 7585A8341D307C4200F5C869 /* FCFormatters.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7585A8401D307C4200F5C869 /* FCFormatters.m in Sources */ = {isa = PBXBuildFile; fileRef = 7585A8351D307C4200F5C869 /* FCFormatters.m */; };
+		7585A8411D307C4200F5C869 /* FCLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7585A8361D307C4200F5C869 /* FCLocation.m */; };
+		7585A8431D307C4200F5C869 /* FCLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 7585A8381D307C4200F5C869 /* FCLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7585A8441D307C4200F5C869 /* FCLocationSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 7585A8391D307C4200F5C869 /* FCLocationSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7585A8451D307C4200F5C869 /* FCLocationSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7585A83A1D307C4200F5C869 /* FCLocationSource.m */; };
+		7585A8461D307C4200F5C869 /* FourCorners.h in Headers */ = {isa = PBXBuildFile; fileRef = 7585A83B1D307C4200F5C869 /* FourCorners.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75975DBF15B0BA020081E870 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75975DBE15B0BA020081E870 /* Foundation.framework */; };
+		75F2C1351F955BB800D4E241 /* FCAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 75F2C1331F955BB800D4E241 /* FCAnnotation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75F2C1361F955BB800D4E241 /* FCAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F2C1341F955BB800D4E241 /* FCAnnotation.m */; };
+		75F566891039051F00969F4B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75F566881039051F00969F4B /* CoreLocation.framework */; };
+		75F5669A1039052C00969F4B /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75F566991039052C00969F4B /* IOKit.framework */; };
+		75F567A41039053500969F4B /* IOBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75F567A31039053500969F4B /* IOBluetooth.framework */; };
+		75FF3DA51F6A39770035DE7D /* geohash.c in Sources */ = {isa = PBXBuildFile; fileRef = 75FF3DA31F6A39770035DE7D /* geohash.c */; };
+		75FF3DA61F6A39770035DE7D /* geohash.h in Headers */ = {isa = PBXBuildFile; fileRef = 75FF3DA41F6A39770035DE7D /* geohash.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		753AD72C21A284880063514E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7578305020F516A900159E5F /* KitBridge.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 75C6A41B21274CFA00367C24;
+			remoteInfo = "KitBridge (iOS, Swift)";
+		};
+		753AD72E21A284880063514E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7578305020F516A900159E5F /* KitBridge.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 75C6A36E21268C5300367C24;
+			remoteInfo = "KitBridge (macOS, Swift)";
+		};
+		7578305620F516A900159E5F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7578305020F516A900159E5F /* KitBridge.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 75DCBEE21ED2C81E00538D87;
+			remoteInfo = "KitBridge (macOS)";
+		};
+		7578305820F516A900159E5F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7578305020F516A900159E5F /* KitBridge.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 75DCBEF21ED2C84B00538D87;
+			remoteInfo = "KitBridge (iOS)";
+		};
+		7578305A20F516A900159E5F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7578305020F516A900159E5F /* KitBridge.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 75A0CEE020D997330091D26A;
+			remoteInfo = colorist;
+		};
+		7578305C20F516B300159E5F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7578305020F516A900159E5F /* KitBridge.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 75DCBEE11ED2C81E00538D87;
+			remoteInfo = "KitBridge (macOS)";
+		};
+		757830FF20F54DDE00159E5F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7578305020F516A900159E5F /* KitBridge.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 75DCBEF11ED2C84B00538D87;
+			remoteInfo = "KitBridge (iOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		75087D431AB80B4B00D47244 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		753DDC951043B71200264D64 /* FCCoreLocationSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = FCCoreLocationSource.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		753DDC961043B71200264D64 /* FCCoreLocationSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = FCCoreLocationSource.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		75576BBE08FCCA4500D3D813 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7578305020F516A900159E5F /* KitBridge.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KitBridge.xcodeproj; path = ../../../KitBridge/KitBridge.xcodeproj; sourceTree = "<group>"; };
+		757830F420F54BBF00159E5F /* FourCorners.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FourCorners.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7585A8341D307C4200F5C869 /* FCFormatters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCFormatters.h; sourceTree = "<group>"; };
+		7585A8351D307C4200F5C869 /* FCFormatters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCFormatters.m; sourceTree = "<group>"; };
+		7585A8361D307C4200F5C869 /* FCLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = FCLocation.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		7585A8381D307C4200F5C869 /* FCLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = FCLocation.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		7585A8391D307C4200F5C869 /* FCLocationSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCLocationSource.h; sourceTree = "<group>"; };
+		7585A83A1D307C4200F5C869 /* FCLocationSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCLocationSource.m; sourceTree = "<group>"; };
+		7585A83B1D307C4200F5C869 /* FourCorners.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = FourCorners.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		7585A84A1D307DDD00F5C869 /* FourCorners.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FourCorners.plist; sourceTree = "<group>"; };
+		75975DBE15B0BA020081E870 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		75B3E30708897F2200F6B90C /* FourCorners.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FourCorners.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75F2C1331F955BB800D4E241 /* FCAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCAnnotation.h; sourceTree = "<group>"; };
+		75F2C1341F955BB800D4E241 /* FCAnnotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCAnnotation.m; sourceTree = "<group>"; };
+		75F566881039051F00969F4B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = /System/Library/Frameworks/CoreLocation.framework; sourceTree = "<absolute>"; };
+		75F566991039052C00969F4B /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
+		75F567A31039053500969F4B /* IOBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetooth.framework; path = /System/Library/Frameworks/IOBluetooth.framework; sourceTree = "<absolute>"; };
+		75F56826103906E800969F4B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		75FF3DA31F6A39770035DE7D /* geohash.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = geohash.c; sourceTree = "<group>"; };
+		75FF3DA41F6A39770035DE7D /* geohash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = geohash.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		757830EA20F54BBF00159E5F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7578310120F54DE900159E5F /* KitBridge.framework in Frameworks */,
+				757830EC20F54BBF00159E5F /* IOKit.framework in Frameworks */,
+				757830EE20F54BBF00159E5F /* AddressBook.framework in Frameworks */,
+				757830EF20F54BBF00159E5F /* Foundation.framework in Frameworks */,
+				757830F020F54BBF00159E5F /* CoreLocation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		75B3E30508897F2200F6B90C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7578305E20F516BA00159E5F /* KitBridge.framework in Frameworks */,
+				75F5669A1039052C00969F4B /* IOKit.framework in Frameworks */,
+				75F567A41039053500969F4B /* IOBluetooth.framework in Frameworks */,
+				75087D441AB80B4B00D47244 /* AddressBook.framework in Frameworks */,
+				75975DBF15B0BA020081E870 /* Foundation.framework in Frameworks */,
+				75F566891039051F00969F4B /* CoreLocation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		753DDC921043B71200264D64 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				7585A83B1D307C4200F5C869 /* FourCorners.h */,
+				7585A8381D307C4200F5C869 /* FCLocation.h */,
+				7585A8361D307C4200F5C869 /* FCLocation.m */,
+				75F2C1331F955BB800D4E241 /* FCAnnotation.h */,
+				75F2C1341F955BB800D4E241 /* FCAnnotation.m */,
+				7585A8341D307C4200F5C869 /* FCFormatters.h */,
+				7585A8351D307C4200F5C869 /* FCFormatters.m */,
+				7585A8391D307C4200F5C869 /* FCLocationSource.h */,
+				7585A83A1D307C4200F5C869 /* FCLocationSource.m */,
+				753DDC951043B71200264D64 /* FCCoreLocationSource.h */,
+				753DDC961043B71200264D64 /* FCCoreLocationSource.m */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		7578305120F516A900159E5F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7578305920F516A900159E5F /* KitBridge.framework */,
+				753AD72D21A284880063514E /* KitBridge.framework */,
+				7578305720F516A900159E5F /* KitBridge.framework */,
+				753AD72F21A284880063514E /* KitBridge.framework */,
+				7578305B20F516A900159E5F /* colorist */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		75B3DE0A0887796100F6B90C = {
+			isa = PBXGroup;
+			children = (
+				7585A84A1D307DDD00F5C869 /* FourCorners.plist */,
+				753DDC921043B71200264D64 /* Sources */,
+				75FF3DA21F6A39770035DE7D /* External */,
+				75B3DE160887796C00F6B90C /* Resources */,
+				75B3DE170887797300F6B90C /* Frameworks */,
+				75B3DE1E088779A800F6B90C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		75B3DE160887796C00F6B90C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				75576BEC08FCCAA300D3D813 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		75B3DE170887797300F6B90C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7578305020F516A900159E5F /* KitBridge.xcodeproj */,
+				75087D431AB80B4B00D47244 /* AddressBook.framework */,
+				75975DBE15B0BA020081E870 /* Foundation.framework */,
+				75F566991039052C00969F4B /* IOKit.framework */,
+				75F567A31039053500969F4B /* IOBluetooth.framework */,
+				75F566881039051F00969F4B /* CoreLocation.framework */,
+				75F56826103906E800969F4B /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		75B3DE1E088779A800F6B90C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				75B3E30708897F2200F6B90C /* FourCorners.framework */,
+				757830F420F54BBF00159E5F /* FourCorners.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		75FF3DA21F6A39770035DE7D /* External */ = {
+			isa = PBXGroup;
+			children = (
+				75FF3DA41F6A39770035DE7D /* geohash.h */,
+				75FF3DA31F6A39770035DE7D /* geohash.c */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		757830D520F54BBF00159E5F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				757830D620F54BBF00159E5F /* FourCorners.h in Headers */,
+				757830D720F54BBF00159E5F /* FCLocation.h in Headers */,
+				757830D820F54BBF00159E5F /* FCFormatters.h in Headers */,
+				757830D920F54BBF00159E5F /* FCLocationSource.h in Headers */,
+				757830DC20F54BBF00159E5F /* FCAnnotation.h in Headers */,
+				757830DD20F54BBF00159E5F /* geohash.h in Headers */,
+				757830DE20F54BBF00159E5F /* FCCoreLocationSource.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		75B3E30208897F2200F6B90C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7585A8461D307C4200F5C869 /* FourCorners.h in Headers */,
+				7585A8431D307C4200F5C869 /* FCLocation.h in Headers */,
+				7585A83F1D307C4200F5C869 /* FCFormatters.h in Headers */,
+				7585A8441D307C4200F5C869 /* FCLocationSource.h in Headers */,
+				75F2C1351F955BB800D4E241 /* FCAnnotation.h in Headers */,
+				75FF3DA61F6A39770035DE7D /* geohash.h in Headers */,
+				753DDCA61043B71200264D64 /* FCCoreLocationSource.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		757830D220F54BBF00159E5F /* FourCorners (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 757830F120F54BBF00159E5F /* Build configuration list for PBXNativeTarget "FourCorners (iOS)" */;
+			buildPhases = (
+				757830D520F54BBF00159E5F /* Headers */,
+				757830DF20F54BBF00159E5F /* Resources */,
+				757830E120F54BBF00159E5F /* Sources */,
+				757830EA20F54BBF00159E5F /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7578310020F54DDE00159E5F /* PBXTargetDependency */,
+			);
+			name = "FourCorners (iOS)";
+			productName = FourCorners.framework;
+			productReference = 757830F420F54BBF00159E5F /* FourCorners.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		75B3E30608897F2200F6B90C /* FourCorners (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 75B3E30908897F2300F6B90C /* Build configuration list for PBXNativeTarget "FourCorners (macOS)" */;
+			buildPhases = (
+				75B3E30208897F2200F6B90C /* Headers */,
+				75B3E30308897F2200F6B90C /* Resources */,
+				75B3E30408897F2200F6B90C /* Sources */,
+				75B3E30508897F2200F6B90C /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7578305D20F516B300159E5F /* PBXTargetDependency */,
+			);
+			name = "FourCorners (macOS)";
+			productName = FourCorners.framework;
+			productReference = 75B3E30708897F2200F6B90C /* FourCorners.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		75B3DE0C0887796100F6B90C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1000;
+				TargetAttributes = {
+					75B3E30608897F2200F6B90C = {
+						DevelopmentTeam = E8G8ARB44Z;
+					};
+				};
+			};
+			buildConfigurationList = 75B3DE0D0887796100F6B90C /* Build configuration list for PBXProject "FourCorners" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				es,
+			);
+			mainGroup = 75B3DE0A0887796100F6B90C;
+			productRefGroup = 75B3DE1E088779A800F6B90C /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 7578305120F516A900159E5F /* Products */;
+					ProjectRef = 7578305020F516A900159E5F /* KitBridge.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				75B3E30608897F2200F6B90C /* FourCorners (macOS) */,
+				757830D220F54BBF00159E5F /* FourCorners (iOS) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		753AD72D21A284880063514E /* KitBridge.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = KitBridge.framework;
+			remoteRef = 753AD72C21A284880063514E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		753AD72F21A284880063514E /* KitBridge.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = KitBridge.framework;
+			remoteRef = 753AD72E21A284880063514E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7578305720F516A900159E5F /* KitBridge.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = KitBridge.framework;
+			remoteRef = 7578305620F516A900159E5F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7578305920F516A900159E5F /* KitBridge.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = KitBridge.framework;
+			remoteRef = 7578305820F516A900159E5F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7578305B20F516A900159E5F /* colorist */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = colorist;
+			remoteRef = 7578305A20F516A900159E5F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		757830DF20F54BBF00159E5F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				757830E020F54BBF00159E5F /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		75B3E30308897F2200F6B90C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75576BED08FCCAA300D3D813 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		757830E120F54BBF00159E5F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				757830E220F54BBF00159E5F /* FCLocation.m in Sources */,
+				757830E320F54BBF00159E5F /* FCFormatters.m in Sources */,
+				757830E520F54BBF00159E5F /* FCCoreLocationSource.m in Sources */,
+				757830E620F54BBF00159E5F /* geohash.c in Sources */,
+				757830E720F54BBF00159E5F /* FCAnnotation.m in Sources */,
+				757830E920F54BBF00159E5F /* FCLocationSource.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		75B3E30408897F2200F6B90C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7585A8411D307C4200F5C869 /* FCLocation.m in Sources */,
+				7585A8401D307C4200F5C869 /* FCFormatters.m in Sources */,
+				753DDCA71043B71200264D64 /* FCCoreLocationSource.m in Sources */,
+				75FF3DA51F6A39770035DE7D /* geohash.c in Sources */,
+				75F2C1361F955BB800D4E241 /* FCAnnotation.m in Sources */,
+				7585A8451D307C4200F5C869 /* FCLocationSource.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7578305D20F516B300159E5F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "KitBridge (macOS)";
+			targetProxy = 7578305C20F516B300159E5F /* PBXContainerItemProxy */;
+		};
+		7578310020F54DDE00159E5F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "KitBridge (iOS)";
+			targetProxy = 757830FF20F54DDE00159E5F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		75576BEC08FCCAA300D3D813 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				75576BBE08FCCA4500D3D813 /* English */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		757830F220F54BBF00159E5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_MODEL_TUNING = G4;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				INFOPLIST_FILE = FourCorners.plist;
+				INSTALL_PATH = "@rpath";
+				OTHER_CFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = net.istumbler.fourcorners;
+				PRODUCT_NAME = FourCorners;
+				SDKROOT = iphoneos;
+				SECTORDER_FLAGS = "";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Debug;
+		};
+		757830F320F54BBF00159E5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_MODEL_TUNING = G4;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				INFOPLIST_FILE = FourCorners.plist;
+				INSTALL_PATH = "@rpath";
+				OTHER_CFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = net.istumbler.fourcorners;
+				PRODUCT_NAME = FourCorners;
+				SDKROOT = iphoneos;
+				SECTORDER_FLAGS = "";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Release;
+		};
+		75B3DE0E0887796100F6B90C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		75B3DE0F0887796100F6B90C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		75B3E30A08897F2300F6B90C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_MODEL_TUNING = G4;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				INFOPLIST_FILE = FourCorners.plist;
+				INSTALL_PATH = "@rpath";
+				OTHER_CFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = net.istumbler.fourcorners;
+				PRODUCT_NAME = FourCorners;
+				SECTORDER_FLAGS = "";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = macosx;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Debug;
+		};
+		75B3E30B08897F2300F6B90C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_MODEL_TUNING = G4;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				INFOPLIST_FILE = FourCorners.plist;
+				INSTALL_PATH = "@rpath";
+				OTHER_CFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = net.istumbler.fourcorners;
+				PRODUCT_NAME = FourCorners;
+				SECTORDER_FLAGS = "";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = macosx;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		757830F120F54BBF00159E5F /* Build configuration list for PBXNativeTarget "FourCorners (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				757830F220F54BBF00159E5F /* Debug */,
+				757830F320F54BBF00159E5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		75B3DE0D0887796100F6B90C /* Build configuration list for PBXProject "FourCorners" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75B3DE0E0887796100F6B90C /* Debug */,
+				75B3DE0F0887796100F6B90C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		75B3E30908897F2300F6B90C /* Build configuration list for PBXNativeTarget "FourCorners (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75B3E30A08897F2300F6B90C /* Debug */,
+				75B3E30B08897F2300F6B90C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 75B3DE0C0887796100F6B90C /* Project object */;
+}
