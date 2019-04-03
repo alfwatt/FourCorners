@@ -6,12 +6,28 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		7564E1FA225535BC00545DAA /* FourCorners */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 7564E1FB225535BD00545DAA /* Build configuration list for PBXAggregateTarget "FourCorners" */;
+			buildPhases = (
+			);
+			dependencies = (
+				7564E1FF225535C800545DAA /* PBXTargetDependency */,
+				7564E201225535C800545DAA /* PBXTargetDependency */,
+			);
+			name = FourCorners;
+			productName = FourCorners;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		75087D441AB80B4B00D47244 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75087D431AB80B4B00D47244 /* AddressBook.framework */; };
 		753DDCA61043B71200264D64 /* FCCoreLocationSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 753DDC951043B71200264D64 /* FCCoreLocationSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		753DDCA71043B71200264D64 /* FCCoreLocationSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 753DDC961043B71200264D64 /* FCCoreLocationSource.m */; };
 		75576BED08FCCAA300D3D813 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 75576BEC08FCCAA300D3D813 /* Localizable.strings */; };
-		7578305E20F516BA00159E5F /* KitBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7578305720F516A900159E5F /* KitBridge.framework */; };
+		7564E2222255362C00545DAA /* KitBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7564E20D225535F900545DAA /* KitBridge.framework */; };
+		7564E2232255363600545DAA /* KitBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7564E211225535F900545DAA /* KitBridge.framework */; };
 		757830D620F54BBF00159E5F /* FourCorners.h in Headers */ = {isa = PBXBuildFile; fileRef = 7585A83B1D307C4200F5C869 /* FourCorners.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		757830D720F54BBF00159E5F /* FCLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 7585A8381D307C4200F5C869 /* FCLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		757830D820F54BBF00159E5F /* FCFormatters.h in Headers */ = {isa = PBXBuildFile; fileRef = 7585A8341D307C4200F5C869 /* FCFormatters.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -30,7 +46,6 @@
 		757830EE20F54BBF00159E5F /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75087D431AB80B4B00D47244 /* AddressBook.framework */; };
 		757830EF20F54BBF00159E5F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75975DBE15B0BA020081E870 /* Foundation.framework */; };
 		757830F020F54BBF00159E5F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75F566881039051F00969F4B /* CoreLocation.framework */; };
-		7578310120F54DE900159E5F /* KitBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7578305920F516A900159E5F /* KitBridge.framework */; };
 		7585A83F1D307C4200F5C869 /* FCFormatters.h in Headers */ = {isa = PBXBuildFile; fileRef = 7585A8341D307C4200F5C869 /* FCFormatters.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7585A8401D307C4200F5C869 /* FCFormatters.m in Sources */ = {isa = PBXBuildFile; fileRef = 7585A8351D307C4200F5C869 /* FCFormatters.m */; };
 		7585A8411D307C4200F5C869 /* FCLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7585A8361D307C4200F5C869 /* FCLocation.m */; };
@@ -49,51 +64,65 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		753AD72C21A284880063514E /* PBXContainerItemProxy */ = {
+		7564E1FE225535C800545DAA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7578305020F516A900159E5F /* KitBridge.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 75C6A41B21274CFA00367C24;
-			remoteInfo = "KitBridge (iOS, Swift)";
+			containerPortal = 75B3DE0C0887796100F6B90C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 75B3E30608897F2200F6B90C;
+			remoteInfo = "FourCorners (macOS)";
 		};
-		753AD72E21A284880063514E /* PBXContainerItemProxy */ = {
+		7564E200225535C800545DAA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7578305020F516A900159E5F /* KitBridge.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 75C6A36E21268C5300367C24;
-			remoteInfo = "KitBridge (macOS, Swift)";
+			containerPortal = 75B3DE0C0887796100F6B90C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 757830D220F54BBF00159E5F;
+			remoteInfo = "FourCorners (iOS)";
 		};
-		7578305620F516A900159E5F /* PBXContainerItemProxy */ = {
+		7564E20C225535F900545DAA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7578305020F516A900159E5F /* KitBridge.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 75DCBEE21ED2C81E00538D87;
-			remoteInfo = "KitBridge (macOS)";
-		};
-		7578305820F516A900159E5F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7578305020F516A900159E5F /* KitBridge.xcodeproj */;
+			containerPortal = 7564E202225535F900545DAA /* KitBridge.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 75DCBEF21ED2C84B00538D87;
 			remoteInfo = "KitBridge (iOS)";
 		};
-		7578305A20F516A900159E5F /* PBXContainerItemProxy */ = {
+		7564E20E225535F900545DAA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7578305020F516A900159E5F /* KitBridge.xcodeproj */;
+			containerPortal = 7564E202225535F900545DAA /* KitBridge.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 75C6A41B21274CFA00367C24;
+			remoteInfo = "KitBridge (iOS, Swift)";
+		};
+		7564E210225535F900545DAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7564E202225535F900545DAA /* KitBridge.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 75DCBEE21ED2C81E00538D87;
+			remoteInfo = "KitBridge (macOS)";
+		};
+		7564E212225535F900545DAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7564E202225535F900545DAA /* KitBridge.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 75C6A36E21268C5300367C24;
+			remoteInfo = "KitBridge (macOS, Swift)";
+		};
+		7564E214225535F900545DAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7564E202225535F900545DAA /* KitBridge.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 75A0CEE020D997330091D26A;
 			remoteInfo = colorist;
 		};
-		7578305C20F516B300159E5F /* PBXContainerItemProxy */ = {
+		7564E2172255361C00545DAA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7578305020F516A900159E5F /* KitBridge.xcodeproj */;
+			containerPortal = 7564E202225535F900545DAA /* KitBridge.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 75DCBEE11ED2C81E00538D87;
 			remoteInfo = "KitBridge (macOS)";
 		};
-		757830FF20F54DDE00159E5F /* PBXContainerItemProxy */ = {
+		7564E2202255362300545DAA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 7578305020F516A900159E5F /* KitBridge.xcodeproj */;
+			containerPortal = 7564E202225535F900545DAA /* KitBridge.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 75DCBEF11ED2C84B00538D87;
 			remoteInfo = "KitBridge (iOS)";
@@ -105,7 +134,8 @@
 		753DDC951043B71200264D64 /* FCCoreLocationSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = FCCoreLocationSource.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		753DDC961043B71200264D64 /* FCCoreLocationSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = FCCoreLocationSource.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		75576BBE08FCCA4500D3D813 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		7578305020F516A900159E5F /* KitBridge.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KitBridge.xcodeproj; path = ../../../KitBridge/KitBridge.xcodeproj; sourceTree = "<group>"; };
+		7564E1F922552F9200545DAA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		7564E202225535F900545DAA /* KitBridge.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KitBridge.xcodeproj; path = ../KitBridge/KitBridge.xcodeproj; sourceTree = "<group>"; };
 		757830F420F54BBF00159E5F /* FourCorners.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FourCorners.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7585A8341D307C4200F5C869 /* FCFormatters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCFormatters.h; sourceTree = "<group>"; };
 		7585A8351D307C4200F5C869 /* FCFormatters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCFormatters.m; sourceTree = "<group>"; };
@@ -132,7 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7578310120F54DE900159E5F /* KitBridge.framework in Frameworks */,
+				7564E2222255362C00545DAA /* KitBridge.framework in Frameworks */,
 				757830EC20F54BBF00159E5F /* IOKit.framework in Frameworks */,
 				757830EE20F54BBF00159E5F /* AddressBook.framework in Frameworks */,
 				757830EF20F54BBF00159E5F /* Foundation.framework in Frameworks */,
@@ -144,7 +174,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7578305E20F516BA00159E5F /* KitBridge.framework in Frameworks */,
+				7564E2232255363600545DAA /* KitBridge.framework in Frameworks */,
 				75F5669A1039052C00969F4B /* IOKit.framework in Frameworks */,
 				75F567A41039053500969F4B /* IOBluetooth.framework in Frameworks */,
 				75087D441AB80B4B00D47244 /* AddressBook.framework in Frameworks */,
@@ -174,14 +204,14 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		7578305120F516A900159E5F /* Products */ = {
+		7564E203225535F900545DAA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7578305920F516A900159E5F /* KitBridge.framework */,
-				753AD72D21A284880063514E /* KitBridge.framework */,
-				7578305720F516A900159E5F /* KitBridge.framework */,
-				753AD72F21A284880063514E /* KitBridge.framework */,
-				7578305B20F516A900159E5F /* colorist */,
+				7564E20D225535F900545DAA /* KitBridge.framework */,
+				7564E20F225535F900545DAA /* KitBridge.framework */,
+				7564E211225535F900545DAA /* KitBridge.framework */,
+				7564E213225535F900545DAA /* KitBridge.framework */,
+				7564E215225535F900545DAA /* colorist */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -189,6 +219,7 @@
 		75B3DE0A0887796100F6B90C = {
 			isa = PBXGroup;
 			children = (
+				7564E1F922552F9200545DAA /* README.md */,
 				7585A84A1D307DDD00F5C869 /* FourCorners.plist */,
 				753DDC921043B71200264D64 /* Sources */,
 				75FF3DA21F6A39770035DE7D /* External */,
@@ -209,7 +240,7 @@
 		75B3DE170887797300F6B90C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7578305020F516A900159E5F /* KitBridge.xcodeproj */,
+				7564E202225535F900545DAA /* KitBridge.xcodeproj */,
 				75087D431AB80B4B00D47244 /* AddressBook.framework */,
 				75975DBE15B0BA020081E870 /* Foundation.framework */,
 				75F566991039052C00969F4B /* IOKit.framework */,
@@ -284,7 +315,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				7578310020F54DDE00159E5F /* PBXTargetDependency */,
+				7564E2212255362300545DAA /* PBXTargetDependency */,
 			);
 			name = "FourCorners (iOS)";
 			productName = FourCorners.framework;
@@ -303,7 +334,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				7578305D20F516B300159E5F /* PBXTargetDependency */,
+				7564E2182255361C00545DAA /* PBXTargetDependency */,
 			);
 			name = "FourCorners (macOS)";
 			productName = FourCorners.framework;
@@ -318,6 +349,11 @@
 			attributes = {
 				LastUpgradeCheck = 1000;
 				TargetAttributes = {
+					7564E1FA225535BC00545DAA = {
+						CreatedOnToolsVersion = 10.2;
+						DevelopmentTeam = E8G8ARB44Z;
+						ProvisioningStyle = Automatic;
+					};
 					75B3E30608897F2200F6B90C = {
 						DevelopmentTeam = E8G8ARB44Z;
 					};
@@ -328,6 +364,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				es,
 			);
@@ -336,12 +373,13 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 7578305120F516A900159E5F /* Products */;
-					ProjectRef = 7578305020F516A900159E5F /* KitBridge.xcodeproj */;
+					ProductGroup = 7564E203225535F900545DAA /* Products */;
+					ProjectRef = 7564E202225535F900545DAA /* KitBridge.xcodeproj */;
 				},
 			);
 			projectRoot = "";
 			targets = (
+				7564E1FA225535BC00545DAA /* FourCorners */,
 				75B3E30608897F2200F6B90C /* FourCorners (macOS) */,
 				757830D220F54BBF00159E5F /* FourCorners (iOS) */,
 			);
@@ -349,39 +387,39 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		753AD72D21A284880063514E /* KitBridge.framework */ = {
+		7564E20D225535F900545DAA /* KitBridge.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = KitBridge.framework;
-			remoteRef = 753AD72C21A284880063514E /* PBXContainerItemProxy */;
+			remoteRef = 7564E20C225535F900545DAA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		753AD72F21A284880063514E /* KitBridge.framework */ = {
+		7564E20F225535F900545DAA /* KitBridge.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = KitBridge.framework;
-			remoteRef = 753AD72E21A284880063514E /* PBXContainerItemProxy */;
+			remoteRef = 7564E20E225535F900545DAA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		7578305720F516A900159E5F /* KitBridge.framework */ = {
+		7564E211225535F900545DAA /* KitBridge.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = KitBridge.framework;
-			remoteRef = 7578305620F516A900159E5F /* PBXContainerItemProxy */;
+			remoteRef = 7564E210225535F900545DAA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		7578305920F516A900159E5F /* KitBridge.framework */ = {
+		7564E213225535F900545DAA /* KitBridge.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = KitBridge.framework;
-			remoteRef = 7578305820F516A900159E5F /* PBXContainerItemProxy */;
+			remoteRef = 7564E212225535F900545DAA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		7578305B20F516A900159E5F /* colorist */ = {
+		7564E215225535F900545DAA /* colorist */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
 			path = colorist;
-			remoteRef = 7578305A20F516A900159E5F /* PBXContainerItemProxy */;
+			remoteRef = 7564E214225535F900545DAA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -435,15 +473,25 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		7578305D20F516B300159E5F /* PBXTargetDependency */ = {
+		7564E1FF225535C800545DAA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 75B3E30608897F2200F6B90C /* FourCorners (macOS) */;
+			targetProxy = 7564E1FE225535C800545DAA /* PBXContainerItemProxy */;
+		};
+		7564E201225535C800545DAA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 757830D220F54BBF00159E5F /* FourCorners (iOS) */;
+			targetProxy = 7564E200225535C800545DAA /* PBXContainerItemProxy */;
+		};
+		7564E2182255361C00545DAA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "KitBridge (macOS)";
-			targetProxy = 7578305C20F516B300159E5F /* PBXContainerItemProxy */;
+			targetProxy = 7564E2172255361C00545DAA /* PBXContainerItemProxy */;
 		};
-		7578310020F54DDE00159E5F /* PBXTargetDependency */ = {
+		7564E2212255362300545DAA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "KitBridge (iOS)";
-			targetProxy = 757830FF20F54DDE00159E5F /* PBXContainerItemProxy */;
+			targetProxy = 7564E2202255362300545DAA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -459,6 +507,24 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		7564E1FC225535BD00545DAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E8G8ARB44Z;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7564E1FD225535BD00545DAA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E8G8ARB44Z;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		757830F220F54BBF00159E5F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -666,6 +732,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7564E1FB225535BD00545DAA /* Build configuration list for PBXAggregateTarget "FourCorners" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7564E1FC225535BD00545DAA /* Debug */,
+				7564E1FD225535BD00545DAA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		757830F120F54BBF00159E5F /* Build configuration list for PBXNativeTarget "FourCorners (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

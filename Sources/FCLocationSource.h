@@ -26,7 +26,7 @@ extern NSString* const FCLocationSourceKey;
 
 @property(nonatomic,assign) BOOL shouldTrackLocation;
 
-#pragma mark Class Methods
+#pragma mark - Class Methods
 
 + (NSArray*) locationSources;
 
@@ -66,7 +66,7 @@ extern NSString* const FCLocationSourceKey;
 */
 + (FCLocationSource*) NetServiceSource;
 
-#pragma mark Instance Methods
+#pragma mark - Instance Methods
 
 // these methods provide meta information for the location source
 - (NSString*) sourceName;

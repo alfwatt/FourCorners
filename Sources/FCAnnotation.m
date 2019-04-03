@@ -68,4 +68,4 @@
 
 @end
 
-/* Copyright 2010-2018, Alf Watt (alf@istumbler.net) All rights reserved. */
+/* Copyright 2010-2019, Alf Watt (alf@istumbler.net) All rights reserved. */

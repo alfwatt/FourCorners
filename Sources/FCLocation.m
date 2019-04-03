@@ -202,11 +202,6 @@ CLLocationCoordinate2D FCCoordincateAtDistanceAndBearingFrom(CLLocationCoordinat
 
 @implementation FCCoordinate
 
-@synthesize latitude;
-@synthesize longitude;
-@synthesize altitude;
-@synthesize precision;
-
 #pragma mark - NSCopying
 
 - (id)copyWithZone:(NSZone*)zone

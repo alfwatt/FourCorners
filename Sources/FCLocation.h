@@ -76,18 +76,18 @@ extern NSString* const FCLocationGeocodedNotification; // the location was geoco
 
 #pragma mark - Keys
 
-extern NSString* const FCLocationSourceKey; // the source of the exlocation
-extern NSString* const FCLocationTrackedObjectKey; //// the object that the location tracks
+extern NSString* const FCLocationSourceKey; // the source of the location
+extern NSString* const FCLocationTrackedObjectKey; // the object that the location tracks
 extern NSString* const FCLocationTrackedReplacesKey; // the previous tracked location
-extern NSString* const FCLocationGeocodedPlacemarksKey; // the previous tracked location
-extern NSString* const FCLocationGeocodingErrorKey; // the previous tracked location
+extern NSString* const FCLocationGeocodedPlacemarksKey; // the location placemarks
+extern NSString* const FCLocationGeocodingErrorKey; // geocoding error
 
 #pragma mark - Functions
 
-/*! @returns a random CLLocationDirection between 0 and 360 */
+/*! @returns a random CLLocationDirection between 0 and 360 or FCDisoriented */
 extern CLLocationDirection FCRandomDirection(void);
 
-/*! @returns the CLLocationDirection from the origin to the destination */
+/*! @returns the CLLocationDirection from the origin to the destination or FCDisoriented */
 extern CLLocationDirection FCBearingFrom(CLLocationCoordinate2D origin, CLLocationCoordinate2D destination);
 
 /*! @returns a new CLLocationCoordinate2D at the specified distance and bearing from the start point */
@@ -99,13 +99,6 @@ extern CLLocationCoordinate2D FCCoordincateAtDistanceAndBearingFrom(CLLocationCo
 
 /*! @class legacy for un-archiving old FCLocation instances */
 @interface FCCoordinate : NSObject <NSCopying, NSCoding>
-{
-    CLLocationDegrees latitude;
-    CLLocationDegrees longitude;
-    CLLocationDistance altitude;
-    CLLocationDistance precision;
-}
-
 @property(assign) CLLocationDegrees latitude;
 @property(assign) CLLocationDegrees longitude;
 @property(assign) CLLocationDistance altitude;
