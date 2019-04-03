@@ -31,16 +31,16 @@ Visit our [Patreon Page](https://www.patreon.com/istumblerlabs) and patronize us
 <a id="classes"></a>
 ## Classes
 
-- <a id="FCAnnotation" href="./FCAnnotation.h">`FCAnnotation`</a>
-- <a id="FCFormatters" href="./FCFormatters.h">`FCFormatters`</a>
-- <a id="FCLocation" href="./FCLocation.h">`FCLocation`</a>
-- <a id="FCLocationSource" href="./FCLocationSource.h">`FCLocationSource`</a>
-    - <a id="FCCoreLocationSource" href="./FCCoreLocationSource.h">`FCCoreLocationSource`</a>
+- <a id="FCAnnotation" href="./Sources/FCAnnotation.h">`FCAnnotation`</a>
+- <a id="FCFormatters" href="./Sources/FCFormatters.h">`FCFormatters`</a>
+- <a id="FCLocation" href="./Sources/FCLocation.h">`FCLocation`</a>
+- <a id="FCLocationSource" href="./Sources/FCLocationSource.h">`FCLocationSource`</a>
+    - <a id="FCCoreLocationSource" href="./Sources/FCCoreLocationSource.h">`FCCoreLocationSource`</a>
 
 <a id="functions"></a>
 ## Functions
 
-<a id="FCLocation-Functions" href="./FCLocation.h">`FCLocation`</a> provides a few public Functions:
+<a id="FCLocation-Functions" href="./Sources/FCLocation.h">`FCLocation`</a> provides a few public Functions:
 
 `extern CLLocationDirection FCRandomDirection(void);`
 
@@ -51,7 +51,7 @@ Visit our [Patreon Page](https://www.patreon.com/istumblerlabs) and patronize us
 <a id="categories"></a>
 ## Categories
 
-<a id="FCLocation-Category" href="./FCLocation.h">`FCLocation`</a> defines a number of extentions to FCLocation.
+<a id="FCLocation-Category" href="./Sources/FCLocation.h">`FCLocation`</a> defines a number of extentions to FCLocation.
 
 <a id="todo"></a>
 ## To Do Items
