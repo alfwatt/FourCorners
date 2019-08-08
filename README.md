@@ -13,6 +13,7 @@ Objective-C Location & Navigation Utilites
 - <a href="#protocols">Protocols</a>
 - <a href="#categories">Categories</a>
 - <a href="#todo">To Do Items</a>
+- <a href="#versions">Versions</a>
 - <a href="#license">MIT License</a>
 
 <a id="goals"></a>
@@ -52,13 +53,18 @@ Visit our [Patreon Page](https://www.patreon.com/istumblerlabs) and patronize us
 ## Categories
 
 <a id="FCLocation-Category" href="./Sources/FCLocation.h">`FCLocation`</a> defines a number of extentions to FCLocation.
-
+ 
 <a id="todo"></a>
 ## To Do Items
 
 - Implement local GPS via Serial
 - Implement GPS sharing on iOS
 - Implement remote GPS via Network
+
+<a id="versions"></a>
+## Versions
+
+- 103 / 103.3 — initial release
 
 <a id="license"></a>
 ## License

@@ -51,17 +51,20 @@ const CLLocationDirection FCNorthByNorthWest = 337.5;
 const CLLocationDirection FCCompasDegrees = 360;
 
 const CLLocationDistance FCMeter = 1;
-const CLLocationDistance FCKiloMeter = 1000; // 1000;
+const CLLocationDistance FCKiloMeter = 1000;
 
-const CLLocationDistance FCEarthRadius = 6378137.0; // WGS 84
-const CLLocationDistance FCEarthSemiMinorAxis = 6356752.314245; // WGS 84
-const CLLocationDistance FCEarthFlattening = 298.257223563;// WGS 84
+#pragma mark - WGS 84
 
-const CLLocationDistance FCEarthGeostationayAltitude = 35786000; // https://en.wikipedia.org/wiki/Geostationary_orbit
-const CLLocationDistance FCAstronomicalUnit = 149597870700; // https://en.wikipedia.org/wiki/Astronomical_unit
+const CLLocationDistance FCEarthRadius = 6378137.0;
+const CLLocationDistance FCEarthSemiMinorAxis = 6356752.314245;
+const CLLocationDistance FCEarthFlattening = 298.257223563;
 
-const CLLocationDistance FCLightSecond = 299792458; // https://en.wikipedia.org/wiki/Light-second
-const CLLocationDistance FCLightYear = 9460730472580800; // https://en.wikipedia.org/wiki/Light-year
+#pragma mark - Astronomic Distances
+
+const CLLocationDistance FCEarthGeostationayAltitude = 35786000;
+const CLLocationDistance FCAstronomicalUnit = 149597870700;
+const CLLocationDistance FCLightSecond = 299792458;
+const CLLocationDistance FCLightYear = 9460730472580800;
 
 // special locations
 static FCLocation* FCNowhereLocation;
