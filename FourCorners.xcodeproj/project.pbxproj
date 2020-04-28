@@ -22,7 +22,6 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		75087D441AB80B4B00D47244 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75087D431AB80B4B00D47244 /* AddressBook.framework */; };
 		753DDCA61043B71200264D64 /* FCCoreLocationSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 753DDC951043B71200264D64 /* FCCoreLocationSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		753DDCA71043B71200264D64 /* FCCoreLocationSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 753DDC961043B71200264D64 /* FCCoreLocationSource.m */; };
 		75576BED08FCCAA300D3D813 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 75576BEC08FCCAA300D3D813 /* Localizable.strings */; };
@@ -43,7 +42,6 @@
 		757830E720F54BBF00159E5F /* FCAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F2C1341F955BB800D4E241 /* FCAnnotation.m */; };
 		757830E920F54BBF00159E5F /* FCLocationSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7585A83A1D307C4200F5C869 /* FCLocationSource.m */; };
 		757830EC20F54BBF00159E5F /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75F566991039052C00969F4B /* IOKit.framework */; };
-		757830EE20F54BBF00159E5F /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75087D431AB80B4B00D47244 /* AddressBook.framework */; };
 		757830EF20F54BBF00159E5F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75975DBE15B0BA020081E870 /* Foundation.framework */; };
 		757830F020F54BBF00159E5F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75F566881039051F00969F4B /* CoreLocation.framework */; };
 		7585A83F1D307C4200F5C869 /* FCFormatters.h in Headers */ = {isa = PBXBuildFile; fileRef = 7585A8341D307C4200F5C869 /* FCFormatters.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -164,7 +162,6 @@
 			files = (
 				7564E2222255362C00545DAA /* KitBridge.framework in Frameworks */,
 				757830EC20F54BBF00159E5F /* IOKit.framework in Frameworks */,
-				757830EE20F54BBF00159E5F /* AddressBook.framework in Frameworks */,
 				757830EF20F54BBF00159E5F /* Foundation.framework in Frameworks */,
 				757830F020F54BBF00159E5F /* CoreLocation.framework in Frameworks */,
 			);
@@ -177,7 +174,6 @@
 				7564E2232255363600545DAA /* KitBridge.framework in Frameworks */,
 				75F5669A1039052C00969F4B /* IOKit.framework in Frameworks */,
 				75F567A41039053500969F4B /* IOBluetooth.framework in Frameworks */,
-				75087D441AB80B4B00D47244 /* AddressBook.framework in Frameworks */,
 				75975DBF15B0BA020081E870 /* Foundation.framework in Frameworks */,
 				75F566891039051F00969F4B /* CoreLocation.framework in Frameworks */,
 			);

@@ -3,7 +3,7 @@
 
 typedef const unichar FCCardinal;
 
-#pragma mark - Cardinal Directions
+// MARK: - Cardinal Directions
 
 extern FCCardinal FCNorth;
 extern FCCardinal FCSouth;
@@ -25,7 +25,7 @@ extern FCCardinal FCSouthKanji;
 extern FCCardinal FCEastKanji;
 extern FCCardinal FCWestKanji;
 
-#pragma mark - Compass Directions
+// MARK: - Compass Directions
 
 extern const CLLocationDirection FCDisoriented;
 
@@ -47,7 +47,7 @@ extern const CLLocationDirection FCWestBySouthWest;
 extern const CLLocationDirection FCWestByNorthWest;
 extern const CLLocationDirection FCNorthByNorthWest;
 
-#pragma mark - Usefull Distances
+// MARK: - Usefull Distances
 
 /*! @brief One meter */
 extern const CLLocationDistance FCMeter;
@@ -55,7 +55,7 @@ extern const CLLocationDistance FCMeter;
 /*! @brief One Thousand Meters (1 Km) */
 extern const CLLocationDistance FCKiloMeter;
 
-#pragma mark - WGS 84
+// MARK: - WGS 84
 
 /*! @brief The Radius of the Earth, in Meters per WGS 84: 6,378,137.0 Meters */
 extern const CLLocationDistance FCEarthRadius;
@@ -66,7 +66,7 @@ extern const CLLocationDistance FCEarthSemiMinorAxis;
 /*! @brief the 1/F Flattening of the Earth per WGS 84: 298.257223563 */
 extern const CLLocationDistance FCEarthFlattening;
 
-#pragma mark - Astronomical Distances
+// MARK: - Astronomical Distances
 
 /*! @brief the Altitude of the Geostaionaly Clark Orbits: 35,786 Kilometers
     @link https://en.wikipedia.org/wiki/Geostationary_orbit */
@@ -84,21 +84,21 @@ extern const CLLocationDistance FCLightSecond;
     @link https://en.wikipedia.org/wiki/Light-year */
 extern const CLLocationDistance FCLightYear;
 
-#pragma mark - Location Types
+// MARK: - Location Types
 
 extern NSString* const FCLocationSpecialType;
 extern NSString* const FCLocationSharedType;
 extern NSString* const FCLoactionNMEAType;
 extern NSString* const FCLocationCLLocationType;
 
-#pragma mark - Notifications
+// MARK: - Notifications
 
 extern NSString* const FCLocationUpdateNotification; // the location of this device updated
 extern NSString* const FCLocationForgottenNotification; // the location was forgotten
 extern NSString* const FCLocationTrackedNotification; // the location of a tracked object updated
 extern NSString* const FCLocationGeocodedNotification; // the location was geocoded into placemarks
 
-#pragma mark - Keys
+// MARK: - Keys
 
 extern NSString* const FCLocationSourceKey; // the source of the location
 extern NSString* const FCLocationTrackedObjectKey; // the object that the location tracks
@@ -106,7 +106,7 @@ extern NSString* const FCLocationTrackedReplacesKey; // the previous tracked loc
 extern NSString* const FCLocationGeocodedPlacemarksKey; // the location placemarks
 extern NSString* const FCLocationGeocodingErrorKey; // geocoding error
 
-#pragma mark - Functions
+// MARK: - Functions
 
 /*! @return a random CLLocationDirection between 0 and 360 or FCDisoriented */
 extern CLLocationDirection FCRandomDirection(void);
@@ -117,7 +117,7 @@ extern CLLocationDirection FCBearingFrom(CLLocationCoordinate2D origin, CLLocati
 /*! @return a new CLLocationCoordinate2D at the specified distance and bearing from the start point */
 extern CLLocationCoordinate2D FCCoordincateAtDistanceAndBearingFrom(CLLocationCoordinate2D start, CLLocationDistance distance, CLLocationDirection bearing);
 
-#pragma mark -
+// MARK: -
 
 @class FCLocationSource;
 
@@ -130,7 +130,7 @@ extern CLLocationCoordinate2D FCCoordincateAtDistanceAndBearingFrom(CLLocationCo
 
 @end
 
-#pragma mark -
+// MARK: -
 
 /*! @brief FCLocation extensions to CLLocation */
 @interface CLLocation (FCLocation)
@@ -154,11 +154,11 @@ extern CLLocationCoordinate2D FCCoordincateAtDistanceAndBearingFrom(CLLocationCo
 @property(nonatomic,readonly) CLLocationDegrees longitudeMinutes;
 @property(nonatomic,readonly) CLLocationDegrees longitudeSeconds;
 
-#pragma mark - Direction Calcs
+// MARK: - Direction Calcs
 
 - (CLLocationDirection) directionTo:(CLLocation*) point;
 
-#pragma mark - Coordinate String Conversions
+// MARK: - Coordinate String Conversions
 
 @property(nonatomic,readonly) NSString* coordinateLatLonString;
 @property(nonatomic,readonly) NSString* coordinateAltitudeString;
@@ -167,7 +167,7 @@ extern CLLocationCoordinate2D FCCoordincateAtDistanceAndBearingFrom(CLLocationCo
 @property(nonatomic,readonly) NSString* coordinateNEMAString;
 @property(nonatomic,readonly) NSString* coordinateGeoHash;
 
-#pragma mark - Location Notifications
+// MARK: - Location Notifications
 
 - (void) notifyLocationUpdateFromSource:(FCLocationSource*) source;
 - (void) notifyLocationTrackedReplacing:(CLLocation*) location withObject:(id) tracked;
@@ -175,7 +175,7 @@ extern CLLocationCoordinate2D FCCoordincateAtDistanceAndBearingFrom(CLLocationCo
 
 @end
 
-#pragma mark -
+// MARK: -
 
 /** FCLocation extends CLLocation adding a name, URL, type and icon fields */
 @interface FCLocation : CLLocation
@@ -184,17 +184,17 @@ extern CLLocationCoordinate2D FCCoordincateAtDistanceAndBearingFrom(CLLocationCo
 @property(nonatomic,retain) NSString* type;
 @property(nonatomic,retain) ILImage* icon;
 
-#pragma mark - Geocoding
+// MARK: - Geocoding
 
 @property(nonatomic,retain) NSArray* placemarks;
 
-#pragma mark - Special Locations
+// MARK: - Special Locations
 
 + (FCLocation*) nowhere;
 + (FCLocation*) anywhere;
 + (FCLocation*) restricted;
 
-#pragma mark - Initilizers
+// MARK: - Initilizers
 
 - (instancetype) initWithLocation:(CLLocation*) location;
 
@@ -209,10 +209,14 @@ extern CLLocationCoordinate2D FCCoordincateAtDistanceAndBearingFrom(CLLocationCo
 - (instancetype) initWithGeoHash:(NSString*) geoHash;
 
 
-#pragma mark - Geocoding
+// MARK: - Geocoding
 
 - (void) geocode;
 
+// MARK: - NSObject Overrides
+
+- (NSComparisonResult) compare:(FCLocation*) other;
+
 @end
 
-/* Copyright © 2010-2019, Alf Watt (alf@istumbler.net) All rights reserved. */
+/* Copyright © 2010-2020, Alf Watt (alf@istumbler.net) All rights reserved. */

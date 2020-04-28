@@ -1,6 +1,5 @@
 #import "FCLocation.h"
 #import "FCCoreLocationSource.h"
-#import <AddressBook/AddressBook.h>
 
 #include <string.h>
 #include <math.h>
@@ -639,7 +638,6 @@ static FCLocation* FCLocationRestricted;
     return [super distanceFromLocation:location];
 }
 
-
 #pragma mark - NSObject
 
 /* Ordering is lat, lon then alt, dop disregarded */
@@ -803,9 +801,9 @@ static FCLocation* FCLocationRestricted;
     NSDictionary* address = [self.placemarks.lastObject addressDictionary];
     // ABCreateStringWithAddressDictionary( dictionary, NO);
     return [NSString stringWithFormat:@"%@, %@ %@",
-            address[kABAddressStreetKey],
-            address[kABAddressCityKey],
-            address[kABAddressStateKey]];
+            address[@"Street"],
+            address[@"City"],
+            address[@"State"]];
 #else
     return @"";
 #endif
