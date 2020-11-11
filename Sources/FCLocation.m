@@ -676,7 +676,7 @@ static FCLocation* FCLocationRestricted;
             equal = YES;
         }
     }
-    else if ([object isKindOfClass:[self class]]) { // FCLocation or a subclass
+    else if ([object isKindOfClass:self.class]) { // FCLocation or a subclass
         FCLocation* other = (FCLocation*) object;
 
         if (self.coordinate.latitude == other.coordinate.latitude

@@ -102,7 +102,7 @@ static CGFloat unit_scale = 0.8;
 
 - (NSString*) stringForObjectValue:(id) object
 {
-	return [[[self class] distanceString:[object doubleValue]] stringByAppendingString:[[self class] unitsString:[object doubleValue]]];
+	return [[self.class distanceString:[object doubleValue]] stringByAppendingString:[self.class unitsString:[object doubleValue]]];
 }
 
 - (NSAttributedString*) attributedStringForObjectValue:(id) object withDefaultAttributes:(NSDictionary*) attrs
@@ -110,8 +110,8 @@ static CGFloat unit_scale = 0.8;
     attrs = [FCFormatter monospaceAttrs:attrs];
     NSDictionary* unitsAttrs = [FCFormatter unitsAttrs:attrs];
     
-    NSMAS* valueString = [[NSMAS alloc] initWithString:[[self class] distanceString:[object doubleValue]] attributes:attrs];
-    NSAS* unitsString = [[NSAS alloc] initWithString:[[self class] unitsString:[object doubleValue]] attributes:unitsAttrs];
+    NSMAS* valueString = [[NSMAS alloc] initWithString:[self.class distanceString:[object doubleValue]] attributes:attrs];
+    NSAS* unitsString = [[NSAS alloc] initWithString:[self.class unitsString:[object doubleValue]] attributes:unitsAttrs];
     [valueString appendAttributedString:unitsString];
     return valueString;
 }
@@ -174,7 +174,7 @@ static CGFloat unit_scale = 0.8;
 
 - (NSString*) stringForObjectValue:(id) object
 {
-	return [[[self class] distanceString:[object doubleValue]] stringByAppendingString:[[self class] unitsString:[object doubleValue]]];
+	return [[self.class distanceString:[object doubleValue]] stringByAppendingString:[self.class unitsString:[object doubleValue]]];
 }
 
 - (NSAttributedString*) attributedStringForObjectValue:(id) object withDefaultAttributes:(NSDictionary*) attrs
@@ -182,8 +182,8 @@ static CGFloat unit_scale = 0.8;
     attrs = [FCFormatter monospaceAttrs:attrs];
     NSDictionary* unitsAttrs = [FCFormatter unitsAttrs:attrs];
     
-    NSMAS* valueString = [[NSMAS alloc] initWithString:[[self class] distanceString:[object doubleValue]] attributes:attrs];
-    NSAS* unitsString = [[NSAS alloc] initWithString:[[self class] unitsString:[object doubleValue]] attributes:unitsAttrs];
+    NSMAS* valueString = [[NSMAS alloc] initWithString:[self.class distanceString:[object doubleValue]] attributes:attrs];
+    NSAS* unitsString = [[NSAS alloc] initWithString:[self.class unitsString:[object doubleValue]] attributes:unitsAttrs];
     [valueString appendAttributedString:unitsString];
     return valueString;
 }
@@ -335,7 +335,7 @@ enum FCLocationFormat
     NSString* bearingString = @"-";
 
 	if ([bearing intValue] != -1) {
-		bearingString = [NSString stringWithFormat:@"%@ ~ %i°", [[self class] bearingString:[bearing doubleValue]], [bearing intValue]];
+		bearingString = [NSString stringWithFormat:@"%@ ~ %i°", [self.class bearingString:[bearing doubleValue]], [bearing intValue]];
     }
     
     return bearingString;
@@ -352,7 +352,7 @@ enum FCLocationFormat
 		valueString = [[NSAS alloc] initWithString:@"~" attributes:cardinalAttrs];
     }
 	else {
-		NSMAS* bearingString = [[NSMAS alloc] initWithString:[[self class] bearingString:[bearing doubleValue]] attributes:cardinalAttrs];
+		NSMAS* bearingString = [[NSMAS alloc] initWithString:[self.class bearingString:[bearing doubleValue]] attributes:cardinalAttrs];
         [bearingString appendAttributedString:[[NSAS alloc] initWithString:@" ~ " attributes:cardinalAttrs]];
         [bearingString appendAttributedString:[[NSAS alloc] initWithString:[NSString stringWithFormat:@"%i",[bearing intValue]] attributes:attrs]];
         [bearingString appendAttributedString:[[NSAS alloc] initWithString:@"°" attributes:cardinalAttrs]];
@@ -430,7 +430,7 @@ extern FCCardinal FCSouthWestArrow;
 	if( [bearing intValue] == -1)
 		return @"-";
 	else
-		return [[self class] bearingString:[bearing doubleValue]];
+		return [self.class bearingString:[bearing doubleValue]];
 }
 
 - (NSAttributedString*) attributedStringForObjectValue:(id) anObject withDefaultAttributes:(NSDictionary*) attrs
@@ -443,7 +443,7 @@ extern FCCardinal FCSouthWestArrow;
 	if( [bearing intValue] == -1)
 		return [[NSAS alloc] initWithString:@"-" attributes:unitsAttrs];
 	else
-		return [[NSAS alloc] initWithString:[[self class] bearingString:[bearing doubleValue]] attributes:cardinalAttrs];
+		return [[NSAS alloc] initWithString:[self.class bearingString:[bearing doubleValue]] attributes:cardinalAttrs];
 }
 
 @end
@@ -491,7 +491,7 @@ extern FCCardinal FCSouthWestArrow;
 	if( [bearing intValue] == -1)
 		return @"-";
 	else
-		return [[self class] bearingString:[bearing doubleValue]];
+		return [self.class bearingString:[bearing doubleValue]];
 }
 
 - (NSAttributedString*) attributedStringForObjectValue:(id) anObject withDefaultAttributes:(NSDictionary*) attrs
@@ -504,7 +504,7 @@ extern FCCardinal FCSouthWestArrow;
 	if( [bearing intValue] == -1)
 		return [[NSAS alloc] initWithString:@"-" attributes:unitsAttrs];
 	else
-		return [[NSAS alloc] initWithString:[[self class] bearingString:[bearing doubleValue]] attributes:cardinalAttrs];
+		return [[NSAS alloc] initWithString:[self.class bearingString:[bearing doubleValue]] attributes:cardinalAttrs];
 }
 
 @end
