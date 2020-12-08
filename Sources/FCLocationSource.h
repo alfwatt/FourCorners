@@ -1,8 +1,6 @@
 #import <Foundation/Foundation.h>
 #import <FourCorners/FCLocation.h>
 
-#import "FCLocation.h"
-
 /* user info dictionary keys for the above notificadtion */
 extern NSString* const FCLocationSourceKey;
 
