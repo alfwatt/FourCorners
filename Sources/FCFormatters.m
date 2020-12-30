@@ -349,13 +349,13 @@ enum FCLocationFormat
     NSAS* valueString = nil;
     
 	if ([bearing intValue] == -1) {
-		valueString = [[NSAS alloc] initWithString:@"~" attributes:cardinalAttrs];
+		valueString = [NSAS.alloc initWithString:@"~" attributes:cardinalAttrs];
     }
 	else {
-		NSMAS* bearingString = [[NSMAS alloc] initWithString:[self.class bearingString:[bearing doubleValue]] attributes:cardinalAttrs];
-        [bearingString appendAttributedString:[[NSAS alloc] initWithString:@" ~ " attributes:cardinalAttrs]];
-        [bearingString appendAttributedString:[[NSAS alloc] initWithString:[NSString stringWithFormat:@"%i",[bearing intValue]] attributes:attrs]];
-        [bearingString appendAttributedString:[[NSAS alloc] initWithString:@"°" attributes:cardinalAttrs]];
+		NSMAS* bearingString = [NSMAS.alloc initWithString:[self.class bearingString:bearing.doubleValue] attributes:cardinalAttrs];
+        [bearingString appendAttributedString:[NSAS.alloc initWithString:@" ~ " attributes:cardinalAttrs]];
+        [bearingString appendAttributedString:[NSAS.alloc initWithString:[NSString stringWithFormat:@"%i", bearing.intValue] attributes:attrs]];
+        [bearingString appendAttributedString:[NSAS.alloc initWithString:@"°" attributes:cardinalAttrs]];
 
         valueString = bearingString;
     }
