@@ -49,39 +49,39 @@ extern const CLLocationDirection FCNorthByNorthWest;
 
 // MARK: - Usefull Distances
 
-/*! @brief One meter */
+/// One meter
 extern const CLLocationDistance FCMeter;
 
-/*! @brief One Thousand Meters (1 Km) */
+/// One Thousand Meters (1 Km)
 extern const CLLocationDistance FCKiloMeter;
 
 // MARK: - WGS 84
 
-/*! @brief The Radius of the Earth, in Meters per WGS 84: 6,378,137.0 Meters */
+/// The Radius of the Earth, in Meters per WGS 84: 6,378,137.0 Meters
 extern const CLLocationDistance FCEarthRadius;
 
-/*! @brief the Semi-Minor Axis of the Earh, in Meters per WGS 84: 6,356,752.314245 Meters */
+/// The Semi-Minor Axis of the Earh, in Meters per WGS 84: 6,356,752.314245 Meters
 extern const CLLocationDistance FCEarthSemiMinorAxis;
 
-/*! @brief the 1/F Flattening of the Earth per WGS 84: 298.257223563 */
+/// The 1/F Flattening of the Earth per WGS 84: 298.257223563
 extern const CLLocationDistance FCEarthFlattening;
 
 // MARK: - Astronomical Distances
 
-/*! @brief the Altitude of the Geostaionaly Clark Orbits: 35,786 Kilometers
-    @link https://en.wikipedia.org/wiki/Geostationary_orbit */
+/// The Altitude of the Geostaionaly Clark Orbits: 35,786 Kilometers
+/// @link https://en.wikipedia.org/wiki/Geostationary_orbit
 extern const CLLocationDistance FCGeostationayAltitude;
 
-/*! @brief the Mean distance between the Earth and the Sun: 149,597,870,700 Meters
-    @link https://en.wikipedia.org/wiki/Astronomical_unit */
+/// The Mean distance between the Earth and the Sun: 149,597,870,700 Meters
+/// @link https://en.wikipedia.org/wiki/Astronomical_unit
 extern const CLLocationDistance FCAstronomicalUnit;
 
-/*! @brief the distance a photon travels in vacuum per second: 299,792,458 Meters
-    @link https://en.wikipedia.org/wiki/Light-second */
+/// The distance a photon travels in vacuum per second: 299,792,458 Meters
+/// @link https://en.wikipedia.org/wiki/Light-second
 extern const CLLocationDistance FCLightSecond;
 
-/*! @brief the distance a photon travels in vacuum per Julian year: 9,460,730,472,580,800 Meters
-    @link https://en.wikipedia.org/wiki/Light-year */
+/// The distance a photon travels in vacuum per Julian year: 9,460,730,472,580,800 Meters
+/// @link https://en.wikipedia.org/wiki/Light-year
 extern const CLLocationDistance FCLightYear;
 
 // MARK: - Location Types
@@ -106,16 +106,39 @@ extern NSString* const FCLocationTrackedReplacesKey; // the previous tracked loc
 extern NSString* const FCLocationGeocodedPlacemarksKey; // the location placemarks
 extern NSString* const FCLocationGeocodingErrorKey; // geocoding error
 
+// MARK: - Circular Error
+
+/// Circular Error Probability
+typedef double FCCircularError;
+
+/// Circular Error Probable 50%
+extern const FCCircularError FCCircularErrorCEP50; // = 0.5;
+
+/// Circular Error Distance Root Mean Square
+extern const FCCircularError FCCircularErrorDRMS; // = 0.63213;
+
+/// Circular Error 2 x Distance Root Mean Square
+extern const FCCircularError FCCircularError2DRMS; // = 0.98169;
+
+/// Circular Error Probable 95%
+extern const FCCircularError FCCiruclarErrorR95; // 0.95;
+
+/// Circular Error Probable 99.7%
+extern const FCCircularError FCCircularErrorR997; // 0.997
+
 // MARK: - Functions
 
-/*! @return a random CLLocationDirection between 0 and 360 or FCDisoriented */
+/// @return a random CLLocationDirection between 0 and 360 or FCDisoriented */
 extern CLLocationDirection FCRandomDirection(void);
 
-/*! @return the CLLocationDirection from the origin to the destination or FCDisoriented */
+/// @return the CLLocationDirection from the origin to the destination or FCDisoriented */
 extern CLLocationDirection FCBearingFrom(CLLocationCoordinate2D origin, CLLocationCoordinate2D destination);
 
-/*! @return a new CLLocationCoordinate2D at the specified distance and bearing from the start point */
+/// @return a new CLLocationCoordinate2D at the specified distance and bearing from the start point */
 extern CLLocationCoordinate2D FCCoordincateAtDistanceAndBearingFrom(CLLocationCoordinate2D start, CLLocationDistance distance, CLLocationDirection bearing);
+
+/// converts an horizontal accuracy distance in meters from one cicurcle error
+extern CLLocationDistance FCCircularErrorProbable(CLLocationDistance errorDistance, FCCircularError fromCircle, FCCircularError toCircle);
 
 // MARK: -
 
