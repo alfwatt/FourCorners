@@ -214,95 +214,85 @@ const FCCircularError FCCircularError2DRMS = 0.98169;
 const FCCircularError FCCiruclarErrorR95 = 0.95;
 
 /// Circular Error Probable 99.7%
-const FCCircularError FCCircularErrorR997 = 0.997
+const FCCircularError FCCircularErrorR997 = 0.997;
 
 // https://en.wikipedia.org/wiki/Circular_error_probable#Conversion
 
+/*
 static double const RMS_TO_CEP = 1.1774;
 static double const RMS_TO_DRMS = 1.4142;
 static double const RMS_TO_R95 = 2.4477;
 static double const RMS_TO_2DRMS = 2.8284;
 static double const RMS_TO_R997 = 3.4086;
+*/
 
-static double const CEP_TO_RMS = 0.8493;
+// static double const CEP_TO_RMS = 0.8493;
 static double const CEP_TO_DRMS = 1.2011;
 static double const CEP_TO_R95 = 2.0789;
 static double const CEP_TO_2DRMS = 2.4022;
 static double const CEP_TO_R997 = 2.8950;
 
-static double const DRMS_TO_RMS = 0.7071;
+// static double const DRMS_TO_RMS = 0.7071;
 static double const DRMS_TO_CEP = 0.8326;
 static double const DRMS_TO_R95 = 1.7308;
 static double const DRMS_TO_2DRMS = 2.0;
 static double const DRMS_TO_R997 = 2.4103;
 
-static double const R95_TO_RMS = 0.4085;
+// static double const R95_TO_RMS = 0.4085;
 static double const R95_TO_CEP = 0.4810;
 static double const R95_TO_DRMS = 0.5778;
 static double const R95_TO_2DRMS = 1.1555;
 static double const R95_TO_R997 = 1.3926;
 
-static double const TWODRMS_TO_RMS = 0.3536;
+// static double const TWODRMS_TO_RMS = 0.3536;
 static double const TWODRMS_TO_CEP = 0.4163;
 static double const TWODRMS_TO_DRMS = 0.5;
 static double const TWODRMS_TO_R95 = 0.8654;
 static double const TWODRMS_TO_R997 = 1.2051;
 
-static double const R997_TO_RMS = 0.2934;
+// static double const R997_TO_RMS = 0.2934;
 static double const R997_TO_CEP = 0.3454;
 static double const R997_TO_DRMS = 0.4149;
 static double const R997_TO_R95 = 0.7181;
 static double const R997_TO_2DRMS = 0.8298;
 
-extern CLLocationDistance FCCircularErrorProbable(CLLocationDistance errorDistance, FCCircularError fromCircle, FCCircularError toCircle) {
+extern CLLocationDistance FCCircularErrorProbable(
+    CLLocationDistance errorDistance,
+    FCCircularError fromCircle,
+    FCCircularError toCircle)
+{
     CLLocationDistance distance = 0.0;
     double factor = 1.0;
     
-    switch (fromCircle) {
-        case FCCircularErrorCEP50:
-            switch (toCircle) {
-                case FCCircularErrorDRMS:   factor = CEP_TO_DRMS;       break;
-                case FCCircularError2DRMS:  factor = CEP_TO_2DRMS;      break;
-                case FCCiruclarErrorR95:    factor = CEP_TO_R95;        break;
-                case FCCircularErrorR997:   factor = CEP_TO_R997;       break;
-            }
-            break;
-        
-        case FCCircularErrorDRMS:
-            switch (toCircle) {
-                case FCCircularErrorCEP50:  factor = DRMS_TO_CEP;       break;
-                case FCCircularError2DRMS:  factor = DRMS_TO_2DRMS;     break;
-                case FCCiruclarErrorR95:    factor = DRMS_TO_R95;       break;
-                case FCCircularErrorR997:   factor = DRMS_TO_R997;      break;
-            }
-            break;
-            
-        case FCCircularError2DRMS:
-            switch (toCircle) {
-                case FCCircularErrorCEP50:  factor = TWODRMS_TO_CEP;    break;
-                case FCCircularErrorDRMS:   factor = TWODRMS_TO_DRMS;   break;
-                case FCCiruclarErrorR95:    factor = TWODRMS_TO_R95;    break;
-                case FCCircularErrorR997:   factor = TWODRMS_TO_R997;   break;
-            }
-            break;
-            
-        case FCCiruclarErrorR95:
-            switch (toCircle) {
-                case FCCircularErrorCEP50:  factor = R95_TO_CEP;        break;
-                case FCCircularErrorDRMS:   factor = R95_TO_DRMS;       break;
-                case FCCircularError2DRMS:  factor = R95_TO_2DRMS;      break;
-                case FCCircularErrorR997:   factor = R95_TO_R997;       break;
-            }
-            break;
-        
-        case FCCircularErrorR997:
-            switch (toCircle) {
-                case FCCircularErrorCEP50:  factor = R997_TO_CEP;       break;
-                case FCCircularErrorDRMS:   factor = R997_TO_DRMS;      break;
-                case FCCircularError2DRMS:  factor = R997_TO_2DRMS;     break;
-                case FCCiruclarErrorR95:    factor = R997_TO_R95;       break;
-            }
-            break;
+    if (fromCircle == FCCircularErrorCEP50) {
+        if      (toCircle == FCCircularErrorDRMS)   factor = CEP_TO_DRMS;
+        else if (toCircle == FCCircularError2DRMS)  factor = CEP_TO_2DRMS;
+        else if (toCircle == FCCiruclarErrorR95)    factor = CEP_TO_R95;
+        else if (toCircle == FCCircularErrorR997)   factor = CEP_TO_R997;
+    }
+    else if (fromCircle == FCCircularErrorDRMS) {
+        if      (toCircle == FCCircularErrorCEP50)  factor = DRMS_TO_CEP;
+        else if (toCircle == FCCircularError2DRMS)  factor = DRMS_TO_2DRMS;
+        else if (toCircle == FCCiruclarErrorR95)    factor = DRMS_TO_R95;
+        else if (toCircle == FCCircularErrorR997)   factor = DRMS_TO_R997;
+    }
+    else if (fromCircle == FCCircularError2DRMS) {
+        if      (toCircle == FCCircularErrorCEP50)  factor = TWODRMS_TO_CEP;
+        else if (toCircle == FCCircularErrorDRMS)   factor = TWODRMS_TO_DRMS;
+        else if (toCircle == FCCiruclarErrorR95)    factor = TWODRMS_TO_R95;
+        else if (toCircle == FCCircularErrorR997)   factor = TWODRMS_TO_R997;
+    }
+    else if (fromCircle == FCCiruclarErrorR95) {
+        if      (toCircle == FCCircularErrorCEP50)  factor = R95_TO_CEP;
+        else if (toCircle == FCCircularErrorDRMS)   factor = R95_TO_DRMS;
+        else if (toCircle == FCCircularError2DRMS)  factor = R95_TO_2DRMS;
+        else if (toCircle == FCCircularErrorR997)   factor = R95_TO_R997;
+    }
+    else if (fromCircle == FCCircularErrorR997) {
+        if      (toCircle == FCCircularErrorCEP50)  factor = R997_TO_CEP;
+        else if (toCircle == FCCircularErrorDRMS)   factor = R997_TO_DRMS;
+        else if (toCircle ==  FCCircularError2DRMS)  factor = R997_TO_2DRMS;
+        else if (toCircle == FCCiruclarErrorR95)    factor = R997_TO_R95;
     }
 
     // TODO figure out how to directly compute instead of using the factor table
