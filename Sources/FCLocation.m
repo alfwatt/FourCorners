@@ -899,12 +899,11 @@ static FCLocation* FCLocationRestricted;
 - (NSString*) placeAddress
 {
 #if IL_APP_KIT
-    NSDictionary* address = [self.placemarks.lastObject addressDictionary];
-    // ABCreateStringWithAddressDictionary( dictionary, NO);
+    CLPlacemark* address = self.placemarks.lastObject;
     return [NSString stringWithFormat:@"%@, %@ %@",
-            address[@"Street"],
-            address[@"City"],
-            address[@"State"]];
+            address.thoroughfare,
+            address.locality,
+            address.administrativeArea];
 #else
     return @"";
 #endif
