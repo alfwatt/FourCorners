@@ -8,13 +8,11 @@ __strong static FCCoreLocationSource* sharedSource;
 
 @implementation FCCoreLocationSource
 
-+ (CLLocation*) FCLocationToCLLocation:(FCLocation*) fcLocation
-{
++ (CLLocation*) FCLocationToCLLocation:(FCLocation*) fcLocation {
     return nil;
 }
 
-+ (FCCoreLocationSource*) coreLocationSource
-{
++ (FCCoreLocationSource*) coreLocationSource {
 	@synchronized(self) {
         if (!sharedSource) {
             sharedSource = [FCCoreLocationSource new];
@@ -24,10 +22,9 @@ __strong static FCCoreLocationSource* sharedSource;
     return sharedSource;
 }
 
-#pragma mark -
+// MARK: -
 
-- (id) init
-{
+- (id) init {
     if ((self = [super init])) {
         self.manager = [CLLocationManager new];
         self.manager.delegate = self;
@@ -37,34 +34,29 @@ __strong static FCCoreLocationSource* sharedSource;
     return self;
 }
 
-#pragma mark -
-#pragma mark Instance Methods
+// MARK: - Instance Methods
 
 // these methods provide meta information for the location source
-- (NSString*) sourceName
-{
+- (NSString*) sourceName {
     return @"Core Location";
 }
 
-- (NSString*) sourceType
-{
+- (NSString*) sourceType {
     return @"Wi-Fi";
 }
 
-- (CLLocationDistance) horizontalAccuracy;
-{
+- (CLLocationDistance) horizontalAccuracy; {
     return 10.0; // core-location is about this accurate in wifi mode
 }
 
 // determines if the source knows the current location
-- (BOOL) knowsCurrentLocation
-{
+- (BOOL) knowsCurrentLocation {
     BOOL isAuthorized = (
-         (CLLocationManager.authorizationStatus == kCLAuthorizationStatusAuthorizedAlways)
+      (self.manager.authorizationStatus == kCLAuthorizationStatusAuthorizedAlways)
 #if IL_UI_KIT
-      || (CLLocationManager.authorizationStatus == kCLAuthorizationStatusAuthorizedWhenInUse)
+      || (self.manager.authorizationStatus == kCLAuthorizationStatusAuthorizedWhenInUse)
 #elif IL_APP_KIT
-      || (CLLocationManager.authorizationStatus == kCLAuthorizationStatusAuthorized)
+      || (self.manager.authorizationStatus == kCLAuthorizationStatusAuthorized)
 #endif
     );
     return isAuthorized && self.currentLocation && CLLocationCoordinate2DIsValid(self.currentLocation.coordinate)
@@ -72,67 +64,58 @@ __strong static FCCoreLocationSource* sharedSource;
         && (self.currentLocation.coordinate.latitude != -180 && self.currentLocation.coordinate.longitude != -180);
 }
 
-- (FCLocation*) currentLocation
-{
+- (FCLocation*) currentLocation {
     return self.current;
 }
 
-- (BOOL) tracksLocations
-{
+- (BOOL) tracksLocations {
     return YES;
 }
 
-- (NSArray*) trackedLocations
-{
+- (NSArray*) trackedLocations {
     return [NSArray arrayWithArray:self.track];
 }
 
-- (BOOL) providesLocationUpdates
-{
+- (BOOL) providesLocationUpdates {
     return YES;
 }
 
-- (void) startUpdatingLocation
-{
+- (void) startUpdatingLocation {
     [self.manager startUpdatingLocation];
 }
 
-- (void) stopUpdatingLocation
-{
+- (void) stopUpdatingLocation {
     [self.manager stopUpdatingLocation];
 }
 
-#pragma mark -
+// MARK: -
 
-- (void) updateCurrentLocation:(FCLocation*) location
-{
+- (void) updateCurrentLocation:(FCLocation*) location {
     self.current = location;
     [self.track addObject:location];
     
     if (![location.type isEqual:FCLocationSpecialType]) {
-        location.name = [[NSProcessInfo processInfo] hostName];
+        location.name = NSProcessInfo.processInfo.hostName;
         location.icon = [[NSBundle bundleForClass:self.class] imageForResource:@"gps-pushpin"];
     }
     
     [location notifyLocationUpdateFromSource:self];
 }
 
-#pragma mark - CLLocationManagerDelegate
+// MARK: - CLLocationManagerDelegate
 
 #if IL_APP_KIT
-- (void)locationManager:(CLLocationManager *)theManager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
-{
-    [self updateCurrentLocation:[[FCLocation alloc] initWithLocation:newLocation]];
+- (void)locationManager:(CLLocationManager *)theManager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
+    [self updateCurrentLocation:[FCLocation.alloc initWithLocation:newLocation]];
 }
 #endif
 
-- (void)locationManager:(CLLocationManager *)theManager didFailWithError:(NSError *)error
-{
+- (void)locationManager:(CLLocationManager *)theManager didFailWithError:(NSError *)error {
     if ([error code] == kCLErrorDenied) {
-        [self updateCurrentLocation:[FCLocation restricted]]; // we've moved to a restricted location
+        [self updateCurrentLocation:FCLocation.restricted]; // we've moved to a restricted location
     }
     else if ([error code] == kCLErrorLocationUnknown) {
-        [self updateCurrentLocation:[FCLocation anywhere]]; // we could be anywere!
+        [self updateCurrentLocation:FCLocation.anywhere]; // we could be anywhere!
     }
     else {
 #if IL_APP_KIT
@@ -143,5 +126,3 @@ __strong static FCCoreLocationSource* sharedSource;
 }
 
 @end
-
-/* Copyright © 2010-2019, Alf Watt (alf@istumbler.net) All rights reserved. */

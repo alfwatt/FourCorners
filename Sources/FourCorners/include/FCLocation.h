@@ -1,5 +1,10 @@
-#import <KitBridge/KitBridge.h>
 #import <CoreLocation/CoreLocation.h>
+
+#if SWIFT_PACKAGE
+#import "KitBridge.h"
+#else
+#import <KitBridge/KitBridge.h>
+#endif
 
 typedef const unichar FCCardinal;
 
@@ -47,7 +52,7 @@ extern const CLLocationDirection FCWestBySouthWest;
 extern const CLLocationDirection FCWestByNorthWest;
 extern const CLLocationDirection FCNorthByNorthWest;
 
-// MARK: - Usefull Distances
+// MARK: - Useful Distances
 
 /// One meter
 extern const CLLocationDistance FCMeter;
@@ -60,7 +65,7 @@ extern const CLLocationDistance FCKiloMeter;
 /// The Radius of the Earth, in Meters per WGS 84: 6,378,137.0 Meters
 extern const CLLocationDistance FCEarthRadius;
 
-/// The Semi-Minor Axis of the Earh, in Meters per WGS 84: 6,356,752.314245 Meters
+/// The Semi-Minor Axis of the Earth, in Meters per WGS 84: 6,356,752.314245 Meters
 extern const CLLocationDistance FCEarthSemiMinorAxis;
 
 /// The 1/F Flattening of the Earth per WGS 84: 298.257223563
@@ -68,9 +73,9 @@ extern const CLLocationDistance FCEarthFlattening;
 
 // MARK: - Astronomical Distances
 
-/// The Altitude of the Geostaionaly Clark Orbits: 35,786 Kilometers
+/// The Altitude of the Geostationary Clark Orbits: 35,786 Kilometers
 /// @link https://en.wikipedia.org/wiki/Geostationary_orbit
-extern const CLLocationDistance FCGeostationayAltitude;
+extern const CLLocationDistance FCGeostationaryAltitude;
 
 /// The Mean distance between the Earth and the Sun: 149,597,870,700 Meters
 /// @link https://en.wikipedia.org/wiki/Astronomical_unit
@@ -88,7 +93,7 @@ extern const CLLocationDistance FCLightYear;
 
 extern NSString* const FCLocationSpecialType;
 extern NSString* const FCLocationSharedType;
-extern NSString* const FCLoactionNMEAType;
+extern NSString* const FCLocationNMEAType;
 extern NSString* const FCLocationCLLocationType;
 
 // MARK: - Notifications
@@ -96,14 +101,14 @@ extern NSString* const FCLocationCLLocationType;
 extern NSString* const FCLocationUpdateNotification; // the location of this device updated
 extern NSString* const FCLocationForgottenNotification; // the location was forgotten
 extern NSString* const FCLocationTrackedNotification; // the location of a tracked object updated
-extern NSString* const FCLocationGeocodedNotification; // the location was geocoded into placemarks
+extern NSString* const FCLocationGeocodedNotification; // the location was geocoded into place-marks
 
 // MARK: - Keys
 
 extern NSString* const FCLocationSourceKey; // the source of the location
 extern NSString* const FCLocationTrackedObjectKey; // the object that the location tracks
 extern NSString* const FCLocationTrackedReplacesKey; // the previous tracked location
-extern NSString* const FCLocationGeocodedPlacemarksKey; // the location placemarks
+extern NSString* const FCLocationGeocodedPlacemarksKey; // the location place-marks
 extern NSString* const FCLocationGeocodingErrorKey; // geocoding error
 
 // MARK: - Circular Error
@@ -112,16 +117,16 @@ extern NSString* const FCLocationGeocodingErrorKey; // geocoding error
 typedef double FCCircularError;
 
 /// Circular Error Probable 50%
-extern const FCCircularError FCCircularErrorCEP50; // = 0.5;
+extern const FCCircularError FCCircularErrorCEP50; // 0.5;
 
 /// Circular Error Distance Root Mean Square
-extern const FCCircularError FCCircularErrorDRMS; // = 0.63213;
+extern const FCCircularError FCCircularErrorDRMS; // 0.63213;
 
 /// Circular Error 2 x Distance Root Mean Square
-extern const FCCircularError FCCircularError2DRMS; // = 0.98169;
+extern const FCCircularError FCCircularError2DRMS; // 0.98169;
 
 /// Circular Error Probable 95%
-extern const FCCircularError FCCiruclarErrorR95; // 0.95;
+extern const FCCircularError FCCircularErrorR95; // 0.95;
 
 /// Circular Error Probable 99.7%
 extern const FCCircularError FCCircularErrorR997; // 0.997
@@ -135,9 +140,9 @@ extern CLLocationDirection FCRandomDirection(void);
 extern CLLocationDirection FCBearingFrom(CLLocationCoordinate2D origin, CLLocationCoordinate2D destination);
 
 /// @return a new CLLocationCoordinate2D at the specified distance and bearing from the start point */
-extern CLLocationCoordinate2D FCCoordincateAtDistanceAndBearingFrom(CLLocationCoordinate2D start, CLLocationDistance distance, CLLocationDirection bearing);
+extern CLLocationCoordinate2D FCCoordinateAtDistanceAndBearingFrom(CLLocationCoordinate2D start, CLLocationDistance distance, CLLocationDirection bearing);
 
-/// converts an horizontal accuracy distance in meters from one cicurcle error
+/// converts an horizontal accuracy distance in meters from one circle error
 extern CLLocationDistance FCCircularErrorProbable(CLLocationDistance errorDistance, FCCircularError fromCircle, FCCircularError toCircle);
 
 // MARK: -
@@ -159,13 +164,13 @@ extern CLLocationDistance FCCircularErrorProbable(CLLocationDistance errorDistan
 @interface CLLocation (FCLocation)
 
 // boxing properties for the underlying CLLocation
-@property(nonatomic,readonly) NSNumber* altitueValue;
+@property(nonatomic,readonly) NSNumber* altitudeValue;
 @property(nonatomic,readonly) NSNumber* horizontalAccuracyValue;
 @property(nonatomic,readonly) NSNumber* verticalAccuracyValue;
 @property(nonatomic,readonly) NSNumber* courseValue;
 @property(nonatomic,readonly) NSNumber* speedValue;
-@property(nonatomic,readonly) NSNumber* distanceValue; // distance from CLLocation's notition of 'here'
-@property(nonatomic,readonly) NSNumber* directionValue; // breaing from CLLocations's notion of 'here'
+@property(nonatomic,readonly) NSNumber* distanceValue; // distance from CLLocation's notion of 'here'
+@property(nonatomic,readonly) NSNumber* directionValue; // bearing from CLLocations's notion of 'here'
 
 @property(nonatomic,readonly) FCCardinal latitudeHemisphere;
 @property(nonatomic,readonly) CLLocationDegrees latitudeDegrees;
@@ -217,7 +222,7 @@ extern CLLocationDistance FCCircularErrorProbable(CLLocationDistance errorDistan
 + (FCLocation*) anywhere;
 + (FCLocation*) restricted;
 
-// MARK: - Initilizers
+// MARK: - Initializers
 
 - (instancetype) initWithLocation:(CLLocation*) location;
 
@@ -241,5 +246,3 @@ extern CLLocationDistance FCCircularErrorProbable(CLLocationDistance errorDistan
 - (NSComparisonResult) compare:(FCLocation*) other;
 
 @end
-
-/* Copyright © 2010-2020, Alf Watt (alf@istumbler.net) All rights reserved. */

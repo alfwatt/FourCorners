@@ -1,0 +1,15 @@
+{
+  "originHash" : "5b4b25f7a9adc68b4b7e5609a097dfae3fc5157ff1d2af2c01540f65ef994c3f",
+  "pins" : [
+    {
+      "identity" : "kitbridge",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/iStumblerLabs/KitBridge.git",
+      "state" : {
+        "revision" : "ec9ce2026ee94201783369452db096f324384a2a",
+        "version" : "1.3.2"
+      }
+    }
+  ],
+  "version" : 3
+}

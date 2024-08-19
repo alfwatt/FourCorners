@@ -12,9 +12,5 @@
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>
 	<string>FMWK</string>
-	<key>CFBundleShortVersionString</key>
-	<string>103</string>
-	<key>CFBundleVersion</key>
-	<string>103.0</string>
 </dict>
 </plist>

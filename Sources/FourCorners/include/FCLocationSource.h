@@ -1,7 +1,13 @@
 #import <Foundation/Foundation.h>
-#import <FourCorners/FCLocation.h>
 
-/* user info dictionary keys for the above notificadtion */
+#if SWIFT_PACKAGE
+#import "FCLocation.h"
+#else
+#import <FourCorners/FCLocation.h>
+#endif
+
+
+/* user info dictionary keys for the above notification */
 extern NSString* const FCLocationSourceKey;
 
 /*! @class
@@ -24,16 +30,16 @@ extern NSString* const FCLocationSourceKey;
 
 @property(nonatomic,assign) BOOL shouldTrackLocation;
 
-#pragma mark - Class Methods
+// MARK: - Class Methods
 
 + (NSArray*) locationSources;
 
 /*
     @method     
     @abstract   Returns an FCLocationSource for a GPS Device
-    @discussion Given a BSD devicename attemtps to open an
+    @discussion Given a BSD device name attempts to open an
     NMEA serial device to read current GPS location data.
-+ (FCLocationSource*) GPSLocationSource:(NSString*) devicename;
++ (FCLocationSource*) GPSLocationSource:(NSString*) deviceName;
 
     @method
     @abstract   Returns an FCLocationSource for a GPSD Server
@@ -64,7 +70,7 @@ extern NSString* const FCLocationSourceKey;
 */
 + (FCLocationSource*) NetServiceSource;
 
-#pragma mark - Instance Methods
+// MARK: - Instance Methods
 
 // these methods provide meta information for the location source
 - (NSString*) sourceName;
@@ -72,7 +78,7 @@ extern NSString* const FCLocationSourceKey;
 - (CLLocationDistance) horizontalAccuracy;
 - (CLLocationDistance) verticalAccuracy;
 
-// some sources know the current coordinates of the decvice
+// some sources know the current coordinates of the device
 - (BOOL) knowsCurrentLocation;
 - (FCLocation*) currentLocation;
 
@@ -85,5 +91,3 @@ extern NSString* const FCLocationSourceKey;
 - (void) stopUpdatingLocation;
 
 @end
-
-/* Copyright © 2010-2019, Alf Watt (alf@istumbler.net) All rights reserved. */

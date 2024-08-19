@@ -8,13 +8,11 @@
 
 @end
 
-#pragma mark -
-
+// MARK: -
 
 @implementation FCAnnotation
 
-+ (instancetype) annotationAtCoordinate:(CLLocationCoordinate2D)coordinate withTitle:(NSString*)title andSubtitle:(NSString*)subtitle
-{
++ (instancetype) annotationAtCoordinate:(CLLocationCoordinate2D)coordinate withTitle:(NSString*)title andSubtitle:(NSString*)subtitle {
     FCAnnotation* annotation = [FCAnnotation new];
     annotation.coordinateStorage = coordinate;
     annotation.titleStorage = title;
@@ -22,34 +20,29 @@
     return annotation;
 }
 
-#pragma mark - MKAnnotation
+// MARK: - MKAnnotation
 
-- (CLLocationCoordinate2D) coordinate
-{
+- (CLLocationCoordinate2D) coordinate {
     return self.coordinateStorage;
 }
 
-- (NSString*) title
-{
+- (NSString*) title {
     return [self.titleStorage copy];
 }
 
-- (NSString*) subtitle
-{
+- (NSString*) subtitle {
     return [self.subtitleStorage copy];
 }
 
-- (void)setCoordinate:(CLLocationCoordinate2D)newCoordinate
-{
+- (void)setCoordinate:(CLLocationCoordinate2D)newCoordinate {
     [self willChangeValueForKey:@"coordinate"];
     self.coordinateStorage = newCoordinate;
     [self didChangeValueForKey:@"coordinate"];
 }
 
-#pragma mark - NSKeyValueObserving
+// MARK: - NSKeyValueObserving
 
-- (void)removeObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath
-{
+- (void)removeObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath {
     @try {
         [super removeObserver:observer forKeyPath:keyPath];
     }
@@ -58,14 +51,11 @@
     }
 }
 
-#pragma mark - NSObject
+// MARK: - NSObject
 
-- (NSString*) description
-{
+- (NSString*) description {
     return [NSString stringWithFormat:@"<%@ %p: %@, %@ at %@ icon: %@>",
         self.class, self, self.titleStorage, self.subtitleStorage, [CLLocationCoordinateFormatter coordinateString:self.coordinateStorage], self.icon];
 }
 
 @end
-
-/* Copyright © 2010-2019, Alf Watt (alf@istumbler.net) All rights reserved. */

@@ -1,7 +1,7 @@
 <a id="fourcorners"></a>
 # FourCorners  
 
-Objective-C Location & Navigation Utilites
+Objective-C Location & Navigation Utilities
 
 <a id="contents"></a>
 ## Contents
@@ -19,7 +19,7 @@ Objective-C Location & Navigation Utilites
 <a id="goals"></a>
 ## Goals
 
-FourCorners provides utilites to make working with CoreLocation easier along with Categories and Functions which make
+FourCorners provides utilities to make working with CoreLocation easier along with Categories and Functions which make
 displaying location information easier and more consistent.
 
 <a id="support"></a>
@@ -47,12 +47,12 @@ Visit our [Patreon Page](https://www.patreon.com/istumblerlabs) and patronize us
 
 `extern CLLocationDirection FCBearingFrom(CLLocationCoordinate2D origin, CLLocationCoordinate2D destination);`
 
-`extern CLLocationCoordinate2D FCCoordincateAtDistanceAndBearingFrom(CLLocationCoordinate2D start, CLLocationDistance distance, CLLocationDirection bearing);`
+`extern CLLocationCoordinate2D FCCoordinateAtDistanceAndBearingFrom(CLLocationCoordinate2D start, CLLocationDistance distance, CLLocationDirection bearing);`
 
 <a id="categories"></a>
 ## Categories
 
-<a id="FCLocation-Category" href="./Sources/FCLocation.h">`FCLocation`</a> defines a number of extentions to FCLocation.
+<a id="FCLocation-Category" href="./Sources/FCLocation.h">`FCLocation`</a> defines a number of extensions to FCLocation.
  
 <a id="todo"></a>
 ## To Do Items
@@ -64,6 +64,7 @@ Visit our [Patreon Page](https://www.patreon.com/istumblerlabs) and patronize us
 <a id="versions"></a>
 ## Versions
 
+- 1.0.4 — 19 August 2024: Swift Package Manager Support
 - 103 / 103.3 — initial release
 
 <a id="license"></a>
@@ -71,7 +72,7 @@ Visit our [Patreon Page](https://www.patreon.com/istumblerlabs) and patronize us
 
     The MIT License (MIT)
 
-    Copyright © 2017-2019 Alf Watt <alf@istumbler.net>
+    Copyright © 2017-2024 Alf Watt <alf@istumbler.net>
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
@@ -85,7 +86,7 @@ Visit our [Patreon Page](https://www.patreon.com/istumblerlabs) and patronize us
 
     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
     IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE

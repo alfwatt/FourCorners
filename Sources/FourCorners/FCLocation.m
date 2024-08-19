@@ -25,7 +25,7 @@ FCCardinal FCSouthKanji = 0x5357; // Unicode: U+5357, UTF-8: E5 8D 97
 FCCardinal FCEastKanji  = 0x6771; // Unicode: U+6771, UTF-8: E6 9D B1
 FCCardinal FCWestKanji  = 0x897F; // Unicode: U+897F, UTF-8: E8 A5 BF
 
-// compas and quarter directions
+// compass and quarter directions
 const CLLocationDirection FCDisoriented = -1;
 
 const CLLocationDirection FCDueNorth  = 0;
@@ -47,20 +47,20 @@ const CLLocationDirection FCWestBySouthWest  = 247.5;
 const CLLocationDirection FCWestByNorthWest  = 292.5;
 const CLLocationDirection FCNorthByNorthWest = 337.5;
 
-const CLLocationDirection FCCompasDegrees = 360;
+const CLLocationDirection FCCompassDegrees = 360;
 
 const CLLocationDistance FCMeter = 1;
 const CLLocationDistance FCKiloMeter = 1000;
 
-#pragma mark - WGS 84
+// MARK: - WGS 84
 
 const CLLocationDistance FCEarthRadius = 6378137.0;
 const CLLocationDistance FCEarthSemiMinorAxis = 6356752.314245;
 const CLLocationDistance FCEarthFlattening = 298.257223563;
 
-#pragma mark - Astronomic Distances
+// MARK: - Astronomic Distances
 
-const CLLocationDistance FCEarthGeostationayAltitude = 35786000;
+const CLLocationDistance FCEarthGeostationaryAltitude = 35786000;
 const CLLocationDistance FCAstronomicalUnit = 149597870700;
 const CLLocationDistance FCLightSecond = 299792458;
 const CLLocationDistance FCLightYear = 9460730472580800;
@@ -71,14 +71,14 @@ static FCLocation* FCAnywhereLocation;
 static FCLocation* FCRestrictedLocation;
 
 NSString* const FCLocationCLLocationType = @"Core Location";
-NSString* const FCLoactionNMEAType = @"NMEA";
+NSString* const FCLocationNMEAType = @"NMEA";
 NSString* const FCLocationSpecialType = @"Special";
 NSString* const FCLocationSharedType = @"Shared";
 
 NSString* const FCLocationTrackedNotification = @"LocationTracked";
 NSString* const FCLocationUpdateNotification = @"LocationUpdate";
 NSString* const FCLocationForgottenNotification  = @"LocationForgotten";
-NSString* const FCLocationGeocodedNotification = @"FCLocationGeocodedNotification"; // the location was geocoded into placemarks
+NSString* const FCLocationGeocodedNotification = @"FCLocationGeocodedNotification"; // the location was geocoded into place-marks
 
 NSString* const FCLocationSourceKey = @"FCLocationSourceKey";
 NSString* const FCLocationTrackedObjectKey = @"FCLocationTrackedObjectKey"; // the object that the location tracks
@@ -86,71 +86,61 @@ NSString* const FCLocationTrackedReplacesKey = @"FCLocationTrackedReplacesKey"; 
 NSString* const FCLocationGeocodedPlacemarksKey = @"FCLocationGeocodedPlacemarksKey"; // the previous tracked location
 NSString* const FCLocationGeocodingErrorKey = @"FCLocationGeocodingErrorKey"; // the previous tracked location
 
-#pragma mark -
+// MARK: -
 
 /** static const double FCWSG84Flattening = (1.0 / 298.257223563); // (WGS '84) */
 
 /** DM to decimal degrees: dd.dddd = dd + mm.mmmm / 60
-static inline double DMtoDeg( double deg, double min)
-{
+static inline double DMtoDeg( double deg, double min) {
     return deg + (min / 60);
 } */
 
 /** DMS to decimal degrees: dd.dddd= deg + (min / 60) + (sec / 60 / 60)
-static inline double DMStoDeg( double deg, double min, double sec)
-{
+static inline double DMStoDeg( double deg, double min, double sec) {
     return deg + (min / 60) + (sec / 60 / 60);
 } */
 
 /** nautical miles to meters: M = NM * 1852
-static inline double NMtoMeters( double knots)
-{
+static inline double NMtoMeters( double knots) {
     return knots * 1852;
 } */
 
 /** meters to nautical miles: NM = M / 1852
-static inline double metersToNM( double meters)
-{
+static inline double metersToNM( double meters) {
     return meters / 1852;
 } */
 
 /** nautical miles to miles: MI = NM * 1.150779
-static inline double NMtoMiles( double knots)
-{
+static inline double NMtoMiles( double knots) {
     return knots * 1.150779;
 } */
 
 /** miles to nautical miles: NM = MI / 1.150779
-static inline double milesToNM( double miles)
-{
+static inline double milesToNM( double miles) {
     return miles / 1.150779;
 } */
 
 /** knots to KM/hr: KM/hr = Knots * 1.852
-static inline double knotsToKMPH( double knots)
-{
+static inline double knotsToKMPH( double knots) {
     return knots * 1.852;
 } */
 
 /** KM/hr to knots: Knots = KM/hr
-static inline double KMPHtoKnots( double kmph)
-{
+static inline double KMPHtoKnots( double kmph) {
     return kmph / 1.852;
 } */
 
 /**  knots to MI/hr: mph = Knots * 1.150779
-static inline double knotsToMPH( double knots)
-{
+static inline double knotsToMPH( double knots) {
     return knots * 1.150779;
 } */
 
 /**  MI/hr to knots: Knots = mph / 1.150779
-static inline double MPHtoKnots( double mph)
-{
+static inline double MPHtoKnots( double mph) {
     return mph / 1.150779;
 } */
 
-#pragma mark -
+// MARK: -
 
 typedef double FCRadians;
 
@@ -158,21 +148,19 @@ static inline FCRadians deg2rad(CLLocationDirection deg) { return (deg * (M_PI /
 
 static inline CLLocationDirection rad2deg(FCRadians rad) { return (rad * (180.0 / M_PI)); }
 
-#pragma mark - Functions
+// MARK: - Functions
 
-CLLocationDirection FCRandomDirection(void)
-{
+CLLocationDirection FCRandomDirection(void) {
     CLLocationDirection randomDirection = FCDisoriented;
-    UInt16 randomBits = 0; // two bytes of entropy is sufficent (thousands of directions)
+    UInt16 randomBits = 0; // two bytes of entropy is sufficient (thousands of directions)
     if (SecRandomCopyBytes(kSecRandomDefault, sizeof(UInt16), &randomBits) == errSecSuccess) {
         double randomPercent = (((double)randomBits / UINT16_MAX));
-        randomDirection = (FCCompasDegrees * randomPercent);
+        randomDirection = (FCCompassDegrees * randomPercent);
     }
     return randomDirection;
 }
 
-CLLocationDirection FCBearingFrom(CLLocationCoordinate2D origin, CLLocationCoordinate2D destination)
-{
+CLLocationDirection FCBearingFrom(CLLocationCoordinate2D origin, CLLocationCoordinate2D destination) {
     double deltaLon = (destination.longitude - origin.longitude);
     double y = sin(deltaLon) * cos(destination.latitude);
     double x = cos(origin.latitude) * sin(destination.latitude) - sin(origin.latitude) * cos(destination.latitude) * cos(deltaLon);
@@ -180,8 +168,7 @@ CLLocationDirection FCBearingFrom(CLLocationCoordinate2D origin, CLLocationCoord
     return rad2deg(bearingInRadians);
 }
 
-CLLocationCoordinate2D FCCoordincateAtDistanceAndBearingFrom(CLLocationCoordinate2D start, CLLocationDistance distance, CLLocationDirection bearing)
-{
+CLLocationCoordinate2D FCCoordinateAtDistanceAndBearingFrom(CLLocationCoordinate2D start, CLLocationDistance distance, CLLocationDirection bearing) {
     CLLocationCoordinate2D target = {0, 0};
     
     double lat1 = deg2rad(start.latitude);
@@ -211,7 +198,7 @@ const FCCircularError FCCircularErrorDRMS = 0.63213;
 const FCCircularError FCCircularError2DRMS = 0.98169;
 
 /// Circular Error Probable 95%
-const FCCircularError FCCiruclarErrorR95 = 0.95;
+const FCCircularError FCCircularErrorR95 = 0.95;
 
 /// Circular Error Probable 99.7%
 const FCCircularError FCCircularErrorR997 = 0.997;
@@ -259,30 +246,29 @@ static double const R997_TO_2DRMS = 0.8298;
 extern CLLocationDistance FCCircularErrorProbable(
     CLLocationDistance errorDistance,
     FCCircularError fromCircle,
-    FCCircularError toCircle)
-{
+    FCCircularError toCircle) {
     CLLocationDistance distance = 0.0;
     double factor = 1.0;
     
     if (fromCircle == FCCircularErrorCEP50) {
         if      (toCircle == FCCircularErrorDRMS)   factor = CEP_TO_DRMS;
         else if (toCircle == FCCircularError2DRMS)  factor = CEP_TO_2DRMS;
-        else if (toCircle == FCCiruclarErrorR95)    factor = CEP_TO_R95;
+        else if (toCircle == FCCircularErrorR95)    factor = CEP_TO_R95;
         else if (toCircle == FCCircularErrorR997)   factor = CEP_TO_R997;
     }
     else if (fromCircle == FCCircularErrorDRMS) {
         if      (toCircle == FCCircularErrorCEP50)  factor = DRMS_TO_CEP;
         else if (toCircle == FCCircularError2DRMS)  factor = DRMS_TO_2DRMS;
-        else if (toCircle == FCCiruclarErrorR95)    factor = DRMS_TO_R95;
+        else if (toCircle == FCCircularErrorR95)    factor = DRMS_TO_R95;
         else if (toCircle == FCCircularErrorR997)   factor = DRMS_TO_R997;
     }
     else if (fromCircle == FCCircularError2DRMS) {
         if      (toCircle == FCCircularErrorCEP50)  factor = TWODRMS_TO_CEP;
         else if (toCircle == FCCircularErrorDRMS)   factor = TWODRMS_TO_DRMS;
-        else if (toCircle == FCCiruclarErrorR95)    factor = TWODRMS_TO_R95;
+        else if (toCircle == FCCircularErrorR95)    factor = TWODRMS_TO_R95;
         else if (toCircle == FCCircularErrorR997)   factor = TWODRMS_TO_R997;
     }
-    else if (fromCircle == FCCiruclarErrorR95) {
+    else if (fromCircle == FCCircularErrorR95) {
         if      (toCircle == FCCircularErrorCEP50)  factor = R95_TO_CEP;
         else if (toCircle == FCCircularErrorDRMS)   factor = R95_TO_DRMS;
         else if (toCircle == FCCircularError2DRMS)  factor = R95_TO_2DRMS;
@@ -291,8 +277,8 @@ extern CLLocationDistance FCCircularErrorProbable(
     else if (fromCircle == FCCircularErrorR997) {
         if      (toCircle == FCCircularErrorCEP50)  factor = R997_TO_CEP;
         else if (toCircle == FCCircularErrorDRMS)   factor = R997_TO_DRMS;
-        else if (toCircle ==  FCCircularError2DRMS)  factor = R997_TO_2DRMS;
-        else if (toCircle == FCCiruclarErrorR95)    factor = R997_TO_R95;
+        else if (toCircle == FCCircularError2DRMS)  factor = R997_TO_2DRMS;
+        else if (toCircle == FCCircularErrorR95)    factor = R997_TO_R95;
     }
 
     // TODO figure out how to directly compute instead of using the factor table
@@ -302,14 +288,13 @@ extern CLLocationDistance FCCircularErrorProbable(
 }
 
 
-#pragma mark -
+// MARK: -
 
 @implementation FCCoordinate
 
-#pragma mark - NSCopying
+// MARK: - NSCopying
 
-- (id)copyWithZone:(NSZone*)zone
-{
+- (id)copyWithZone:(NSZone*)zone {
     FCCoordinate* copy = nil;
     if ((copy = FCCoordinate.new)) {
         copy.latitude = self.latitude;
@@ -320,18 +305,16 @@ extern CLLocationDistance FCCircularErrorProbable(
     return copy;
 }
 
-#pragma mark - NSCoding
+// MARK: - NSCoding
 
-- (void) encodeWithCoder:(NSCoder*) coder
-{
+- (void) encodeWithCoder:(NSCoder*) coder {
     [coder encodeDouble:self.latitude forKey:@"lat"];
     [coder encodeDouble:self.longitude forKey:@"lon"];
     [coder encodeDouble:self.altitude forKey:@"alt"];
     [coder encodeDouble:self.precision forKey:@"pre"];
 }
 
-- (id) initWithCoder:(NSCoder*) decoder
-{
+- (id) initWithCoder:(NSCoder*) decoder {
     if ((self = super.init)) {
         self.latitude = [decoder decodeDoubleForKey:@"lat"];
         self.longitude = [decoder decodeDoubleForKey:@"lon"];
@@ -343,19 +326,18 @@ extern CLLocationDistance FCCircularErrorProbable(
 
 @end
 
-#pragma mark -
+// MARK: -
 
 @implementation CLLocation (FCLocation)
 
 // boxing properties for the underlying CLLocation
-- (NSNumber*) altitueValue { return @(self.altitude); }
+- (NSNumber*) altitudeValue { return @(self.altitude); }
 - (NSNumber*) horizontalAccuracyValue { return @(self.horizontalAccuracy); }
 - (NSNumber*) verticalAccuracyValue { return @(self.verticalAccuracy); }
 - (NSNumber*) courseValue { return @(self.course); }
 - (NSNumber*) speedValue { return @(self.speed); }
 
-- (NSNumber*) distanceValue
-{
+- (NSNumber*) distanceValue {
     NSNumber* distance = nil;
     
     if (FCCoreLocationSource.coreLocationSource.knowsCurrentLocation) {
@@ -365,8 +347,7 @@ extern CLLocationDistance FCCircularErrorProbable(
     return distance;
 }
 
-- (NSNumber*) directionValue
-{
+- (NSNumber*) directionValue {
     NSNumber* direction = nil;
     
     if (FCCoreLocationSource.coreLocationSource.knowsCurrentLocation) {
@@ -376,53 +357,44 @@ extern CLLocationDistance FCCircularErrorProbable(
     return direction;
 }
 
-#pragma mark - Coordinate Components
+// MARK: - Coordinate Components
 
-- (FCCardinal)latitudeHemisphere
-{
+- (FCCardinal)latitudeHemisphere {
     return (self.coordinate.latitude < 0 ? FCSouth : FCNorth);
 }
 
-- (CLLocationDegrees)latitudeDegrees
-{
+- (CLLocationDegrees)latitudeDegrees {
     return floor(fabs(self.coordinate.latitude));
 }
 
-- (CLLocationDegrees)latitudeMinutes
-{
+- (CLLocationDegrees)latitudeMinutes {
     return remainder((fabs(self.coordinate.latitude) * 60), 60);
 }
 
-- (CLLocationDegrees)latitudeSeconds
-{
+- (CLLocationDegrees)latitudeSeconds {
     return remainder((fabs(self.coordinate.latitude) * 60 * 60), 60);
 }
 
-- (FCCardinal)longitudeHemisphere
-{
+- (FCCardinal)longitudeHemisphere {
     return (self.coordinate.longitude < 0 ? FCWest: FCEast);
 }
 
-- (CLLocationDegrees)longitudeDegrees
-{
+- (CLLocationDegrees)longitudeDegrees {
     return floor(fabs(self.coordinate.longitude));
 }
 
-- (CLLocationDegrees)longitudeMinutes
-{
+- (CLLocationDegrees)longitudeMinutes {
     return remainder((fabs(self.coordinate.longitude) * 60), 60);
 }
 
-- (CLLocationDegrees)longitudeSeconds
-{
+- (CLLocationDegrees)longitudeSeconds {
     return remainder((fabs(self.coordinate.longitude) * 60 * 60), 60);
 }
 
-#pragma mark - Distance and Bearing
+// MARK: - Distance and Bearing
 
 /** compute the great circle bearing to another point */
-- (CLLocationDirection) directionTo:(CLLocation*) point
-{
+- (CLLocationDirection) directionTo:(CLLocation*) point {
     if ((self == [FCLocation nowhere]    || point == [FCLocation nowhere])
      || (self == [FCLocation anywhere]   || point == [FCLocation anywhere])
      || (self == [FCLocation restricted] || point == [FCLocation restricted])
@@ -448,10 +420,9 @@ extern CLLocationDistance FCCircularErrorProbable(
     return rad2deg(radiansBearing);
 }
 
-#pragma mark - Coordinate Strings
+// MARK: - Coordinate Strings
 
-- (NSString*) coordinateLatLonString
-{
+- (NSString*) coordinateLatLonString {
     return [NSString stringWithFormat:@"%c%.0lf° %.4lf' %c%.0lf° %.4lf'",
         [self latitudeHemisphere],
         [self latitudeDegrees],
@@ -461,8 +432,7 @@ extern CLLocationDistance FCCircularErrorProbable(
         [self longitudeMinutes]];
 }
 
-- (NSString*) coordinateAltitudeString
-{
+- (NSString*) coordinateAltitudeString {
     NSString *altStr = nil;
     if (self.altitude != 0.0) {
         altStr = [NSString stringWithFormat:@"MSL%+.1fm", self.altitude];
@@ -470,8 +440,7 @@ extern CLLocationDistance FCCircularErrorProbable(
     return altStr;
 }
 
-- (NSString*) coordinatePrecisionString
-{
+- (NSString*) coordinatePrecisionString {
     NSString* dopStr = nil;
     if (self.horizontalAccuracy != 0.0) {
         dopStr = [NSString stringWithFormat:@"~%.1fm", self.horizontalAccuracy];
@@ -479,8 +448,7 @@ extern CLLocationDistance FCCircularErrorProbable(
     return dopStr;
 }
 
-- (NSString*)coordinateString
-{
+- (NSString*)coordinateString {
     NSString* latLon = [self coordinateLatLonString];
     NSString* altStr = [self coordinateAltitudeString];
     NSString* dopStr = [self coordinatePrecisionString];
@@ -498,8 +466,7 @@ extern CLLocationDistance FCCircularErrorProbable(
     return coords;
 }
 
-- (NSString*) coordinateNEMAString
-{
+- (NSString*) coordinateNEMAString {
     return [NSString stringWithFormat:@"%c%.0lf' %.4lf\" %c%.0lf %.4lf\" MSL%+.2lf",
         [self latitudeHemisphere],
         [self latitudeDegrees],
@@ -524,17 +491,15 @@ extern CLLocationDistance FCCircularErrorProbable(
  11      ≤ 149mm        ×      149mm   ~= 0.0221 m^2   (surveying)
  12      ≤ 37.2mm       ×      18.6mm  ~= 0.0007 m^2   (movement of tectonic plates)
 */
-- (NSString*) coordinateGeoHash
-{
-    char geoHashStr[64] = {0}; // eight charaters provides 19 m^2 error https://en.wikipedia.org/wiki/Geohash
+- (NSString*) coordinateGeoHash {
+    char geoHashStr[64] = {0}; // eight characters provides 19 m^2 error https://en.wikipedia.org/wiki/Geohash
     int geohash_result = geohash_encode(self.coordinate.latitude, self.coordinate.longitude, geoHashStr, sizeof(geoHashStr));
     return (geohash_result == GEOHASH_OK ? [NSString stringWithCString:geoHashStr encoding:NSUTF8StringEncoding] : @"");
 }
 
-#pragma mark - Location Notifications
+// MARK: - Location Notifications
 
-- (void) notifyLocationUpdateFromSource:(FCLocationSource*) source
-{
+- (void) notifyLocationUpdateFromSource:(FCLocationSource*) source {
     NSMutableDictionary* info = [NSMutableDictionary new];
     if (source) {
         [info setObject:source forKey:FCLocationSourceKey];
@@ -542,8 +507,7 @@ extern CLLocationDistance FCCircularErrorProbable(
     [[NSNotificationCenter defaultCenter] postNotificationName:FCLocationUpdateNotification object:self userInfo:info];
 }
 
-- (void) notifyLocationTrackedReplacing:(CLLocation*) replaced withObject:(id) tracked
-{
+- (void) notifyLocationTrackedReplacing:(CLLocation*) replaced withObject:(id) tracked {
     NSMutableDictionary* info = [NSMutableDictionary new];
     if (replaced) {
         [info setObject:replaced forKey:FCLocationTrackedReplacesKey];
@@ -555,8 +519,7 @@ extern CLLocationDistance FCCircularErrorProbable(
     [[NSNotificationCenter defaultCenter] postNotificationName:FCLocationTrackedNotification object:self userInfo:info];
 }
 
-- (void) notifyLocationForgottenBySource:(FCLocationSource*) source
-{
+- (void) notifyLocationForgottenBySource:(FCLocationSource*) source {
     NSMutableDictionary* info = [NSMutableDictionary new];
     if( source) [info setObject:source forKey:FCLocationSourceKey];
     [[NSNotificationCenter defaultCenter] postNotificationName:FCLocationForgottenNotification object:self userInfo:info];
@@ -564,32 +527,28 @@ extern CLLocationDistance FCCircularErrorProbable(
 
 @end
 
-#pragma mark -
+// MARK: -
 
 @implementation FCLocation
 
 /** */
-+ (FCLocation*)coordinateWithString:(NSString*)str
-{
++ (FCLocation*)coordinateWithString:(NSString*)str {
     return nil;
 }
 
-/** @return location with the cooridnate specified at zero altitute with default dop and */
-+ (FCLocation*) locationWithCoordinate:(CLLocationCoordinate2D) coordinate
-{
+/** @return location with the coordinate specified at zero altitude with default dop and */
++ (FCLocation*) locationWithCoordinate:(CLLocationCoordinate2D) coordinate {
     return nil;
 }
 
 /** */
-+ (FCLocation*) locationWithLocation:(CLLocation*) locatin;
-{
++ (FCLocation*) locationWithLocation:(CLLocation*) location; {
     return nil;
 }
 
 static FCLocation* FCLocationNowhere;
 
-+ (FCLocation*)nowhere
-{
++ (FCLocation*)nowhere {
     if (!FCLocationNowhere) {
         FCLocationNowhere = [[FCLocation alloc] initWithCoordinate:kCLLocationCoordinate2DInvalid
                                                               name:@"Nowhere"
@@ -602,8 +561,7 @@ static FCLocation* FCLocationNowhere;
 
 static FCLocation* FCLocationAnywhere;
 
-+ (FCLocation*)anywhere
-{
++ (FCLocation*)anywhere {
     if (!FCLocationAnywhere) {
         FCLocationAnywhere = [[FCLocation alloc] initWithCoordinate:kCLLocationCoordinate2DInvalid
                                                                name:@"Anywhere"
@@ -616,8 +574,7 @@ static FCLocation* FCLocationAnywhere;
 
 static FCLocation* FCLocationRestricted;
 
-+ (FCLocation*)restricted
-{
++ (FCLocation*)restricted {
     if (!FCLocationRestricted) {
         FCLocationRestricted = [[FCLocation alloc] initWithCoordinate:kCLLocationCoordinate2DInvalid
                                                                  name:@"Restricted"
@@ -628,11 +585,10 @@ static FCLocation* FCLocationRestricted;
     return FCLocationRestricted;
 }
 
-#pragma mark - Initilzers
+// MARK: - Initializers
 
-/* copy initilzier for CLLocations */
-- (instancetype) initWithLocation:(CLLocation *)other
-{
+/// copy initializer for CLLocations
+- (instancetype) initWithLocation:(CLLocation *)other {
     if (self = [super initWithCoordinate:other.coordinate
                                 altitude:other.altitude
                       horizontalAccuracy:other.horizontalAccuracy
@@ -647,8 +603,7 @@ static FCLocation* FCLocationRestricted;
                                name:(NSString*) name
                                type:(NSString*) type
                                 url:(NSURL*) url
-                               icon:(ILImage*) icon
-{
+                               icon:(ILImage*) icon {
     if (self = [super initWithCoordinate:coordinate altitude:0.0 horizontalAccuracy:0.0 verticalAccuracy:0.0 timestamp:[NSDate date]]) {
         self.name = name;
         self.type = type;
@@ -658,15 +613,14 @@ static FCLocation* FCLocationRestricted;
     return self;
 }
 
-/* long form initilzier for the initWithNMEAString function */
+/// long form initializer for the initWithNMEAString function
 - (instancetype)initWithLongitudeHemisphere:(FCCardinal)longitudeHemisphere
                            longitudeDegrees:(CLLocationDegrees)longitudeDegrees
                            longitudeMinutes:(CLLocationDegrees)longitudeMinutes
                          latitudeHemisphere:(FCCardinal)latitudeHemisphere
                             latitudeDegrees:(CLLocationDegrees)latitudeDegrees
                             latitudeMinutes:(CLLocationDegrees)latitudeMinutes
-                                   altitude:(CLLocationDistance)alt
-{
+                                   altitude:(CLLocationDistance)alt {
     CLLocationDegrees latitude = ((latitudeDegrees + (latitudeMinutes / 60.0)) * (latitudeHemisphere == FCWest ? -1.0 : 1.0));
     CLLocationDegrees longitude = ((longitudeDegrees + (longitudeMinutes / 60.0)) * (longitudeHemisphere == FCSouth ? -1.0 : 1.0));
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(latitude,longitude);
@@ -678,8 +632,7 @@ static FCLocation* FCLocationRestricted;
                            timestamp:[NSDate date]];
 }
 
-- (instancetype) initWithGeoHash:(NSString *)geoHash
-{
+- (instancetype) initWithGeoHash:(NSString *)geoHash {
     FCLocation* location = nil;
     char* geoHashStr = (char*)[geoHash cStringUsingEncoding:NSUTF8StringEncoding];
     double hashLatitude = 0.0;
@@ -693,8 +646,7 @@ static FCLocation* FCLocationRestricted;
 }
 
 /* Parses an NEMA format GPS string with MSL */
-- (FCLocation*)initWithNMEAString:(NSString*)str
-{
+- (FCLocation*)initWithNMEAString:(NSString*)str {
     char longitudeHemisphere;
     CLLocationDegrees longitudeDegrees;
     CLLocationDegrees longitudeMinutes;
@@ -703,7 +655,7 @@ static FCLocation* FCLocationRestricted;
     CLLocationDegrees latitudeMinutes;
     CLLocationDistance altitudeMeters;
     
-    // TODO handle case withouth the MSL numbers
+    // TODO handle case without the MSL numbers
     sscanf([str cStringUsingEncoding:NSUTF8StringEncoding], "%c%lf' %lf\" %c%lf %lf\" MSL%lf",
            &longitudeHemisphere,
            &longitudeDegrees,
@@ -719,31 +671,28 @@ static FCLocation* FCLocationRestricted;
                               latitudeHemisphere:latitudeHemisphere
                                  latitudeDegrees:latitudeDegrees
                                  latitudeMinutes:latitudeMinutes
-                                        altitude:altitudeMeters])
-    {
+                                        altitude:altitudeMeters]) {
         self.name = str;
-        self.type = FCLoactionNMEAType;
+        self.type = FCLocationNMEAType;
     }
     
     return self;
 }
 
-#pragma mark - CLLocation Overrides
+// MARK: - CLLocation Overrides
 
-- (CLLocationDistance)distanceFromLocation:(const CLLocation *)location
-{
-    if (self == [FCLocation nowhere]    || location == [FCLocation nowhere])    { return UINT64_MAX; } // nowhere is infinitly far away
+- (CLLocationDistance)distanceFromLocation:(const CLLocation *)location {
+    if (self == [FCLocation nowhere]    || location == [FCLocation nowhere])    { return UINT64_MAX; } // nowhere is infinitely far away
     if (self == [FCLocation anywhere]   || location == [FCLocation anywhere])   { return 0; } // anywhere is right here
     if (self == [FCLocation restricted] || location == [FCLocation restricted]) { return NAN; } // not even a number
     
     return [super distanceFromLocation:location];
 }
 
-#pragma mark - NSObject
+// MARK: - NSObject
 
 /* Ordering is lat, lon then alt, dop disregarded */
-- (NSComparisonResult) compare:(FCLocation*) other
-{
+- (NSComparisonResult) compare:(FCLocation*) other {
     NSComparisonResult result = NSOrderedDescending;
     if (self.coordinate.latitude == other.coordinate.latitude
      && self.coordinate.longitude == other.coordinate.longitude
@@ -766,8 +715,7 @@ static FCLocation* FCLocationRestricted;
     return result;
 }
 
-- (BOOL) isEqual:(id)object
-{
+- (BOOL) isEqual:(id)object {
     BOOL equal = NO;
     if ([object class] == NSClassFromString(@"CLLocation")) { // only the CLLocation objects
         CLLocation* other = (CLLocation*)object;
@@ -794,10 +742,9 @@ static FCLocation* FCLocationRestricted;
     return equal;
 }
 
-#pragma mark - NSCopying
+// MARK: - NSCopying
 
-- (id)copyWithZone:(NSZone*)zone
-{
+- (id)copyWithZone:(NSZone*)zone {
     FCLocation* other = [[FCLocation alloc] initWithCoordinate:self.coordinate
                                                       altitude:self.altitude
                                             horizontalAccuracy:self.horizontalAccuracy
@@ -810,10 +757,9 @@ static FCLocation* FCLocationRestricted;
     return other;
 }
 
-#pragma mark - NSCoding
+// MARK: - NSCoding
 
-- (void) encodeWithCoder:(NSCoder*) coder
-{
+- (void) encodeWithCoder:(NSCoder*) coder {
     [coder encodeInt:100 forKey:@"ver"]; // encoded under version 100
     
     // CLLocation Properties
@@ -824,7 +770,7 @@ static FCLocation* FCLocationRestricted;
     [coder encodeDouble:self.verticalAccuracy forKey:@"vdop"];
     [coder encodeObject:self.timestamp forKey:@"time"];
     
-    // FCLocation Extentions
+    // FCLocation Extensions
     [coder encodeObject:self.name forKey:@"name"];
     [coder encodeObject:self.url forKey:@"url"];
     [coder encodeObject:self.type forKey:@"type"];
@@ -833,8 +779,7 @@ static FCLocation* FCLocationRestricted;
 #endif
 }
 
-- (id) initWithCoder:(NSCoder*) decoder
-{
+- (id) initWithCoder:(NSCoder*) decoder {
     CLLocationDegrees latitude = 0.0;
     CLLocationDegrees longitude = 0.0;
     CLLocationDistance altitude = 0.0;
@@ -857,7 +802,7 @@ static FCLocation* FCLocationRestricted;
         altitude = coords.altitude;
         hdop = coords.precision;
         vdop = coords.precision;
-        time = [NSDate date];
+        time = NSDate.date;
     }
     
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(latitude, longitude);
@@ -876,10 +821,9 @@ static FCLocation* FCLocationRestricted;
     return self;
 }
 
-#pragma mark - Geocoding
+// MARK: - Geocoding
 
-- (void) geocode
-{
+- (void) geocode {
     // TODO serialize these into a queue so that only one can
     CLGeocoder* geocoder = [CLGeocoder new];
     [geocoder reverseGeocodeLocation:self completionHandler:^(NSArray* marks, NSError* error) {
@@ -891,13 +835,11 @@ static FCLocation* FCLocationRestricted;
     }];
 }
 
-- (NSString*) placeName
-{
+- (NSString*) placeName {
     return [self.placemarks.lastObject name];
 }
 
-- (NSString*) placeAddress
-{
+- (NSString*) placeAddress {
 #if IL_APP_KIT
     CLPlacemark* address = self.placemarks.lastObject;
     return [NSString stringWithFormat:@"%@, %@ %@",
@@ -910,5 +852,3 @@ static FCLocation* FCLocationRestricted;
 }
 
 @end
-
-/* Copyright © 2010-2019, Alf Watt (alf@istumbler.net) All rights reserved. */

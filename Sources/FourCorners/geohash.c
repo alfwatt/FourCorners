@@ -31,24 +31,21 @@ static signed char base32de[] = {
 #define PRECISION	.00000000001	/* XXX not validated */
 
 static int
-max(int x, int y)
-{
+max(int x, int y) {
 	if (x < y)
 		return y;
 	return x;
 }
 
 static double
-pround(double x, int precision)
-{
+pround(double x, int precision) {
 	double div = pow(10, precision);
 	return round(x * div) / div;
 }
 
 /* Quick and Dirty Floating-Point to Fractional Precision */
 static double
-fprec(double x)
-{
+fprec(double x) {
         int i;
         double int_part, frac_part;
 
@@ -64,8 +61,7 @@ fprec(double x)
 }
 
 int
-geohash_encode(double latitude, double longitude, char *hash, size_t len)
-{
+geohash_encode(double latitude, double longitude, char *hash, size_t len) {
 	double lat[] = {-90.0, 90.0};
 	double lon[] = {-180.0, 180.0};
 	double mid;
@@ -118,8 +114,7 @@ geohash_encode(double latitude, double longitude, char *hash, size_t len)
 }
 
 int
-geohash_decode(char *hash, double *latitude, double *longitude)
-{
+geohash_decode(char *hash, double *latitude, double *longitude) {
 	size_t len = strlen(hash);
 
 	double lat[] = {-90.0, 90.0};

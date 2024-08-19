@@ -12,7 +12,7 @@
 
 @end
 
-#pragma mark -
+// MARK: -
 
 @interface CLLocationSpeedFormatter : NSFormatter
 
@@ -23,7 +23,7 @@
 
 @end
 
-#pragma mark -
+// MARK: -
 
 @interface CLLocationCoordinateFormatter : NSFormatter
 
@@ -33,7 +33,7 @@
 
 @end
 
-#pragma mark -
+// MARK: -
 
 @interface CLLocationDirectionFormatter : NSFormatter 
 
@@ -43,7 +43,7 @@
 
 @end
 
-#pragma mark -
+// MARK: -
 
 @interface CLLocationDirectionArrowFormatter : NSFormatter
 
@@ -54,7 +54,7 @@
 
 @end
 
-#pragma mark -
+// MARK: -
 
 @interface CLLocationDirectionKanjiFormatter : NSFormatter
 
@@ -64,7 +64,7 @@
 
 @end
 
-#pragma mark -
+// MARK: -
 
 @interface FCLocationLogFormatter : NSFormatter
 
@@ -73,5 +73,3 @@
 + (NSString*) logString:(FCLocation*) location;
 
 @end
-
-/* Copyright © 2010-2019, Alf Watt (alf@istumbler.net) All rights reserved. */
