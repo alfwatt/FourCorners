@@ -52,7 +52,7 @@ const CLLocationDirection FCCompassDegrees = 360;
 const CLLocationDistance FCMeter = 1;
 const CLLocationDistance FCKiloMeter = 1000;
 
-// MARK: - WGS 84
+// MARK: WGS 84
 
 const CLLocationDistance FCEarthRadius = 6378137.0;
 const CLLocationDistance FCEarthSemiMinorAxis = 6356752.314245;
@@ -85,8 +85,6 @@ NSString* const FCLocationTrackedObjectKey = @"FCLocationTrackedObjectKey"; // t
 NSString* const FCLocationTrackedReplacesKey = @"FCLocationTrackedReplacesKey"; // the previous tracked location
 NSString* const FCLocationGeocodedPlacemarksKey = @"FCLocationGeocodedPlacemarksKey"; // the previous tracked location
 NSString* const FCLocationGeocodingErrorKey = @"FCLocationGeocodingErrorKey"; // the previous tracked location
-
-// MARK: -
 
 /** static const double FCWSG84Flattening = (1.0 / 298.257223563); // (WGS '84) */
 
@@ -287,45 +285,6 @@ extern CLLocationDistance FCCircularErrorProbable(
     return distance;
 }
 
-
-// MARK: -
-
-@implementation FCCoordinate
-
-// MARK: - NSCopying
-
-- (id)copyWithZone:(NSZone*)zone {
-    FCCoordinate* copy = nil;
-    if ((copy = FCCoordinate.new)) {
-        copy.latitude = self.latitude;
-        copy.longitude = self.longitude;
-        copy.altitude = self.altitude;
-        copy.precision = self.precision;
-    }
-    return copy;
-}
-
-// MARK: - NSCoding
-
-- (void) encodeWithCoder:(NSCoder*) coder {
-    [coder encodeDouble:self.latitude forKey:@"lat"];
-    [coder encodeDouble:self.longitude forKey:@"lon"];
-    [coder encodeDouble:self.altitude forKey:@"alt"];
-    [coder encodeDouble:self.precision forKey:@"pre"];
-}
-
-- (id) initWithCoder:(NSCoder*) decoder {
-    if ((self = super.init)) {
-        self.latitude = [decoder decodeDoubleForKey:@"lat"];
-        self.longitude = [decoder decodeDoubleForKey:@"lon"];
-        self.altitude = [decoder decodeDoubleForKey:@"alt"];
-        self.precision = [decoder decodeDoubleForKey:@"pre"];
-    }
-    return self;
-}
-
-@end
-
 // MARK: -
 
 @implementation CLLocation (FCLocation)
@@ -478,13 +437,13 @@ extern CLLocationDistance FCCircularErrorProbable(
 }
 
 /*
- 1       ≤ 5,000km      ×      5,000km ~= 25000k km^2  (continents)
- 2       ≤ 1,250km      ×      625km   ~= 781k   km^2
- 3       ≤ 156km        ×      156km   ~= 24k    km^2
- 4       ≤ 39.1km       ×      19.5km  ~= 764    km^2  (states or small countries)
- 5       ≤ 4.89km       ×      4.89km  ~= 23.9   km^2  (large neighboring cities)
- 6       ≤ 1.22km       ×      0.61km  ~= 0.74   km^2  (neighborhoods)
- 7       ≤ 153m         ×      153m    ~= 0.02   km^2
+ 1       ≤ 5,000km      ×      5,000km ~= 25000k km^2  (hemisphere)
+ 2       ≤ 1,250km      ×      625km   ~= 781k   km^2  (continent)
+ 3       ≤ 156km        ×      156km   ~= 24k    km^2  (states or small countries)
+ 4       ≤ 39.1km       ×      19.5km  ~= 764    km^2  (large cities)
+ 5       ≤ 4.89km       ×      4.89km  ~= 23.9   km^2
+ 6       ≤ 1.22km       ×      0.61km  ~= 0.74   km^2  (neighborhood)
+ 7       ≤ 153m         ×      153m    ~= 0.02   km^2  (city block)
  8       ≤ 38.2m        ×      19.1m   ~= 748.72 m^2   (large fields/buildings)
  9       ≤ 4.77m        ×      4.77m   ~= 22.75  m^2   (parcel of land)
  10      ≤ 1.19m        ×      0.596m  ~= 0.7    m^2   (distinguish trees)
@@ -794,15 +753,6 @@ static FCLocation* FCLocationRestricted;
         hdop = [decoder decodeDoubleForKey:@"hdop"];
         vdop = [decoder decodeDoubleForKey:@"vdop"];
         time = [decoder decodeObjectForKey:@"time"];
-    }
-    else { // use the legacy encoding to recover older data sets
-        FCCoordinate* coords = [decoder decodeObjectForKey:@"location"];
-        latitude = coords.latitude;
-        longitude = coords.longitude;
-        altitude = coords.altitude;
-        hdop = coords.precision;
-        vdop = coords.precision;
-        time = NSDate.date;
     }
     
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(latitude, longitude);

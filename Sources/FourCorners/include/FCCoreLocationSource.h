@@ -1,10 +1,10 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 
-#if SWIFT_PACKAGE
-#import "FCLocationSource.h"
-#else
+#if __has_include(<FourCorners/FCLocationSource.h>)
 #import <FourCorners/FCLocationSource.h>
+#else
+#import "FCLocationSource.h"
 #endif
 
 @interface FCCoreLocationSource : FCLocationSource <CLLocationManagerDelegate>

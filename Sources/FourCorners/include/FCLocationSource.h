@@ -1,9 +1,9 @@
 #import <Foundation/Foundation.h>
 
-#if SWIFT_PACKAGE
-#import "FCLocation.h"
-#else
+#if __has_include(<FourCorners/FCLocation.h>)
 #import <FourCorners/FCLocation.h>
+#else
+#import "FCLocation.h"
 #endif
 
 

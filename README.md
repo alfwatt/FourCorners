@@ -60,6 +60,7 @@ Visit our [Patreon Page](https://www.patreon.com/istumblerlabs) and patronize us
 - Implement local GPS via Serial
 - Implement GPS sharing on iOS
 - Implement remote GPS via Network
+- Add Haversine and Vincenty distance methods
 
 <a id="versions"></a>
 ## Versions

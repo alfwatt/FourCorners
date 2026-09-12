@@ -1,10 +1,10 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-#if SWIFT_PACKAGE
-#import "KitBridge.h"
-#else
+#if __has_include(<KitBridge/KitBridge.h>)
 #import <KitBridge/KitBridge.h>
+#else
+#import "KitBridge.h"
 #endif
 
 /// a concerte MKMapAnnotation class */

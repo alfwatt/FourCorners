@@ -1,9 +1,9 @@
 #import <CoreLocation/CoreLocation.h>
 
-#if SWIFT_PACKAGE
-#import "KitBridge.h"
-#else
+#if __has_include(<KitBridge/KitBridge.h>)
 #import <KitBridge/KitBridge.h>
+#else
+#import "KitBridge.h"
 #endif
 
 typedef const unichar FCCardinal;
@@ -148,15 +148,6 @@ extern CLLocationDistance FCCircularErrorProbable(CLLocationDistance errorDistan
 // MARK: -
 
 @class FCLocationSource;
-
-/*! @class legacy for un-archiving old FCLocation instances */
-@interface FCCoordinate : NSObject <NSCopying, NSCoding>
-@property(assign) CLLocationDegrees latitude;
-@property(assign) CLLocationDegrees longitude;
-@property(assign) CLLocationDistance altitude;
-@property(assign) CLLocationDistance precision;
-
-@end
 
 // MARK: -
 
