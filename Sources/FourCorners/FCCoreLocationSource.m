@@ -96,7 +96,7 @@ __strong static FCCoreLocationSource* sharedSource;
     
     if (![location.type isEqual:FCLocationSpecialType]) {
         location.name = NSProcessInfo.processInfo.hostName;
-        location.icon = [[NSBundle bundleForClass:self.class] imageForResource:@"gps-pushpin"];
+        location.icon = [ILImage systemImageNamed:@"mappin"];
     }
     
     [location notifyLocationUpdateFromSource:self];
