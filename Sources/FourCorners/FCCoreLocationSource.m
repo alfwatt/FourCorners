@@ -81,6 +81,9 @@ __strong static FCCoreLocationSource* sharedSource;
 }
 
 - (void) startUpdatingLocation {
+    if (self.manager.authorizationStatus == kCLAuthorizationStatusNotDetermined) { // prompt, updates start when it's granted
+        [self.manager requestWhenInUseAuthorization];
+    }
     [self.manager startUpdatingLocation];
 }
 
@@ -104,14 +107,17 @@ __strong static FCCoreLocationSource* sharedSource;
 
 // MARK: - CLLocationManagerDelegate
 
-#if IL_APP_KIT
-- (void)locationManager:(CLLocationManager *)theManager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
-    [self updateCurrentLocation:[FCLocation.alloc initWithLocation:newLocation]];
+- (void)locationManager:(CLLocationManager *)theManager didUpdateLocations:(NSArray<CLLocation*>*)locations {
+    if (locations.lastObject) {
+        [self updateCurrentLocation:[FCLocation.alloc initWithLocation:locations.lastObject]];
+    }
 }
-#endif
 
 - (void)locationManager:(CLLocationManager *)theManager didFailWithError:(NSError *)error {
-    if ([error code] == kCLErrorDenied) {
+    if ([error code] == kCLErrorDenied && theManager.authorizationStatus == kCLAuthorizationStatusNotDetermined) {
+        return; // reported while the authorization prompt is waiting for an answer
+    }
+    else if ([error code] == kCLErrorDenied) {
         [self updateCurrentLocation:FCLocation.restricted]; // we've moved to a restricted location
     }
     else if ([error code] == kCLErrorLocationUnknown) {
