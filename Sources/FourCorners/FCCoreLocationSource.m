@@ -84,11 +84,17 @@ __strong static FCCoreLocationSource* sharedSource;
     if (self.manager.authorizationStatus == kCLAuthorizationStatusNotDetermined) { // prompt, updates start when it's granted
         [self.manager requestWhenInUseAuthorization];
     }
+#if TARGET_OS_TV
+    [self.manager requestLocation]; // tvOS gives one location at a time
+#else
     [self.manager startUpdatingLocation];
+#endif
 }
 
 - (void) stopUpdatingLocation {
+#if !TARGET_OS_TV
     [self.manager stopUpdatingLocation];
+#endif
 }
 
 // MARK: -
