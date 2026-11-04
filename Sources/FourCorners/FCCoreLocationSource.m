@@ -52,10 +52,13 @@ __strong static FCCoreLocationSource* sharedSource;
 // determines if the source knows the current location
 - (BOOL) knowsCurrentLocation {
     BOOL isAuthorized = (
+#if TARGET_OS_VISION
+      (self.manager.authorizationStatus == kCLAuthorizationStatusAuthorizedWhenInUse) // visionOS has no always-authorized
+#elif IL_UI_KIT
       (self.manager.authorizationStatus == kCLAuthorizationStatusAuthorizedAlways)
-#if IL_UI_KIT
       || (self.manager.authorizationStatus == kCLAuthorizationStatusAuthorizedWhenInUse)
 #elif IL_APP_KIT
+      (self.manager.authorizationStatus == kCLAuthorizationStatusAuthorizedAlways)
       || (self.manager.authorizationStatus == kCLAuthorizationStatusAuthorized)
 #endif
     );
