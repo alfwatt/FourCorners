@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		753C13C430548445008338B2 /* KitBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 753C13C030548438008338B2 /* KitBridge.framework */; platformFilters = (ios, macos, ); };
+		753C13C430548445008338B2 /* KitBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 753C13C030548438008338B2 /* KitBridge.framework */; platformFilters = (ios, macos, watchos, ); };
 		753DDCA61043B71200264D64 /* FCCoreLocationSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 753DDC951043B71200264D64 /* FCCoreLocationSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		753DDCA71043B71200264D64 /* FCCoreLocationSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 753DDC961043B71200264D64 /* FCCoreLocationSource.m */; };
 		75576BED08FCCAA300D3D813 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 75576BEC08FCCAA300D3D813 /* Localizable.strings */; };
@@ -510,9 +510,9 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = NO;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = "1,2,4,7";
 				TVOS_DEPLOYMENT_TARGET = "$(RECOMMENDED_TVOS_DEPLOYMENT_TARGET)";
 				WARNING_CFLAGS = (
 					"-Wmost",
@@ -555,9 +555,9 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SECTORDER_FLAGS = "";
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator xros xrsimulator";
 				SUPPORTS_MACCATALYST = NO;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = "1,2,4,7";
 				TVOS_DEPLOYMENT_TARGET = "$(RECOMMENDED_TVOS_DEPLOYMENT_TARGET)";
 				WARNING_CFLAGS = (
 					"-Wmost",

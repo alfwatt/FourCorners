@@ -4,7 +4,7 @@ import PackageDescription
 
 let package = Package(
     name: "FourCorners",
-    platforms: [.macOS(.v11), .iOS(.v14), .tvOS(.v14), .visionOS(.v26)],
+    platforms: [.macOS(.v11), .iOS(.v14), .tvOS(.v14), .watchOS(.v10), .visionOS(.v26)],
     products: [
         .library( name: "FourCorners", targets: ["FourCorners"])
     ],
