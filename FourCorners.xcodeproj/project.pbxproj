@@ -3,31 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		753C13C430548445008338B2 /* KitBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 753C13C030548438008338B2 /* KitBridge.framework */; platformFilters = (ios, macos, watchos, ); };
-		753DDCA61043B71200264D64 /* FCCoreLocationSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 753DDC951043B71200264D64 /* FCCoreLocationSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		753DDCA71043B71200264D64 /* FCCoreLocationSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 753DDC961043B71200264D64 /* FCCoreLocationSource.m */; };
 		75576BED08FCCAA300D3D813 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 75576BEC08FCCAA300D3D813 /* Localizable.strings */; };
-		7585A83F1D307C4200F5C869 /* FCFormatters.h in Headers */ = {isa = PBXBuildFile; fileRef = 7585A8341D307C4200F5C869 /* FCFormatters.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7585A8401D307C4200F5C869 /* FCFormatters.m in Sources */ = {isa = PBXBuildFile; fileRef = 7585A8351D307C4200F5C869 /* FCFormatters.m */; };
-		7585A8411D307C4200F5C869 /* FCLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7585A8361D307C4200F5C869 /* FCLocation.m */; };
-		7585A8431D307C4200F5C869 /* FCLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = 7585A8381D307C4200F5C869 /* FCLocation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7585A8441D307C4200F5C869 /* FCLocationSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 7585A8391D307C4200F5C869 /* FCLocationSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7585A8451D307C4200F5C869 /* FCLocationSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7585A83A1D307C4200F5C869 /* FCLocationSource.m */; };
-		7585A8461D307C4200F5C869 /* FourCorners.h in Headers */ = {isa = PBXBuildFile; fileRef = 7585A83B1D307C4200F5C869 /* FourCorners.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		75975DBF15B0BA020081E870 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75975DBE15B0BA020081E870 /* Foundation.framework */; };
-		75ADAEB62D8F4E7100322BC2 /* NSURL+FourCorners.h in Headers */ = {isa = PBXBuildFile; fileRef = 75ADAEB22D8F4E7100322BC2 /* NSURL+FourCorners.h */; };
-		75ADAEB72D8F4E7100322BC2 /* NSURL+FourCorners.m in Sources */ = {isa = PBXBuildFile; fileRef = 75ADAEB32D8F4E7100322BC2 /* NSURL+FourCorners.m */; };
-		75F2C1351F955BB800D4E241 /* FCAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 75F2C1331F955BB800D4E241 /* FCAnnotation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		75F2C1361F955BB800D4E241 /* FCAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F2C1341F955BB800D4E241 /* FCAnnotation.m */; };
 		75F566891039051F00969F4B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75F566881039051F00969F4B /* CoreLocation.framework */; };
 		75F5669A1039052C00969F4B /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75F566991039052C00969F4B /* IOKit.framework */; platformFilters = (ios, macos, ); };
 		75F567A41039053500969F4B /* IOBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75F567A31039053500969F4B /* IOBluetooth.framework */; platformFilters = (macos, ); };
-		75FF3DA51F6A39770035DE7D /* geohash.c in Sources */ = {isa = PBXBuildFile; fileRef = 75FF3DA31F6A39770035DE7D /* geohash.c */; };
-		75FF3DA61F6A39770035DE7D /* geohash.h in Headers */ = {isa = PBXBuildFile; fileRef = 75FF3DA41F6A39770035DE7D /* geohash.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,13 +29,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = 75A0CEE020D997330091D26A;
 			remoteInfo = colorist;
-		};
-		7575B49E2DDE41C000154C49 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 75ADAEBE2D8F50C000322BC2 /* ILFoundation.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 75EEF6A92D638CFB00B2EE80;
-			remoteInfo = ILFoundationSwift;
 		};
 		75A73CB02DC029D000186BC3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -77,34 +55,22 @@
 
 /* Begin PBXFileReference section */
 		75087D431AB80B4B00D47244 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
-		753DDC951043B71200264D64 /* FCCoreLocationSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = FCCoreLocationSource.h; sourceTree = "<group>"; };
-		753DDC961043B71200264D64 /* FCCoreLocationSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = FCCoreLocationSource.m; sourceTree = "<group>"; };
 		75576BBE08FCCA4500D3D813 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7564E1F922552F9200545DAA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7564E202225535F900545DAA /* KitBridge.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KitBridge.xcodeproj; path = ../KitBridge/KitBridge.xcodeproj; sourceTree = "<group>"; };
-		7585A8341D307C4200F5C869 /* FCFormatters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCFormatters.h; sourceTree = "<group>"; };
-		7585A8351D307C4200F5C869 /* FCFormatters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCFormatters.m; sourceTree = "<group>"; };
-		7585A8361D307C4200F5C869 /* FCLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = FCLocation.m; sourceTree = "<group>"; };
-		7585A8381D307C4200F5C869 /* FCLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = FCLocation.h; sourceTree = "<group>"; };
-		7585A8391D307C4200F5C869 /* FCLocationSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCLocationSource.h; sourceTree = "<group>"; };
-		7585A83A1D307C4200F5C869 /* FCLocationSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCLocationSource.m; sourceTree = "<group>"; };
-		7585A83B1D307C4200F5C869 /* FourCorners.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = FourCorners.h; sourceTree = "<group>"; };
-		7585A84A1D307DDD00F5C869 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75975DBE15B0BA020081E870 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		75ADAEB22D8F4E7100322BC2 /* NSURL+FourCorners.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+FourCorners.h"; sourceTree = "<group>"; };
-		75ADAEB32D8F4E7100322BC2 /* NSURL+FourCorners.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+FourCorners.m"; sourceTree = "<group>"; };
 		75ADAEBE2D8F50C000322BC2 /* ILFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ILFoundation.xcodeproj; path = ../ILFoundation/ILFoundation.xcodeproj; sourceTree = SOURCE_ROOT; };
 		75B21A322C73FD9F00521BDA /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		75B3E30708897F2200F6B90C /* FourCorners.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FourCorners.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		75F2C1331F955BB800D4E241 /* FCAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCAnnotation.h; sourceTree = "<group>"; };
-		75F2C1341F955BB800D4E241 /* FCAnnotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCAnnotation.m; sourceTree = "<group>"; };
 		75F566881039051F00969F4B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = /System/Library/Frameworks/CoreLocation.framework; sourceTree = "<absolute>"; };
 		75F566991039052C00969F4B /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
 		75F567A31039053500969F4B /* IOBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetooth.framework; path = /System/Library/Frameworks/IOBluetooth.framework; sourceTree = "<absolute>"; };
 		75F56826103906E800969F4B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
-		75FF3DA31F6A39770035DE7D /* geohash.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = geohash.c; sourceTree = "<group>"; };
-		75FF3DA41F6A39770035DE7D /* geohash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = geohash.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		75F00D000000000000000021 /* FourCorners */ = {isa = PBXFileSystemSynchronizedRootGroup; path = FourCorners; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		75B3E30508897F2200F6B90C /* Frameworks */ = {
@@ -125,7 +91,7 @@
 		753DDC921043B71200264D64 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				75B21A2C2C73FCD800521BDA /* FourCorners */,
+				75F00D000000000000000021 /* FourCorners */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -143,41 +109,9 @@
 			isa = PBXGroup;
 			children = (
 				75A73CB12DC029D000186BC3 /* ILFoundation.framework */,
-				7575B49F2DDE41C000154C49 /* ILFoundationSwift.framework */,
 				75A73CB32DC029D000186BC3 /* ILFoundationTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		75B21A2B2C73FCD800521BDA /* include */ = {
-			isa = PBXGroup;
-			children = (
-				7585A83B1D307C4200F5C869 /* FourCorners.h */,
-				7585A8381D307C4200F5C869 /* FCLocation.h */,
-				75F2C1331F955BB800D4E241 /* FCAnnotation.h */,
-				7585A8341D307C4200F5C869 /* FCFormatters.h */,
-				7585A8391D307C4200F5C869 /* FCLocationSource.h */,
-				753DDC951043B71200264D64 /* FCCoreLocationSource.h */,
-				75ADAEB22D8F4E7100322BC2 /* NSURL+FourCorners.h */,
-				75FF3DA41F6A39770035DE7D /* geohash.h */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		75B21A2C2C73FCD800521BDA /* FourCorners */ = {
-			isa = PBXGroup;
-			children = (
-				7585A84A1D307DDD00F5C869 /* Info.plist */,
-				7585A8361D307C4200F5C869 /* FCLocation.m */,
-				75F2C1341F955BB800D4E241 /* FCAnnotation.m */,
-				7585A8351D307C4200F5C869 /* FCFormatters.m */,
-				7585A83A1D307C4200F5C869 /* FCLocationSource.m */,
-				753DDC961043B71200264D64 /* FCCoreLocationSource.m */,
-				75ADAEB32D8F4E7100322BC2 /* NSURL+FourCorners.m */,
-				75FF3DA31F6A39770035DE7D /* geohash.c */,
-				75B21A2B2C73FCD800521BDA /* include */,
-			);
-			path = FourCorners;
 			sourceTree = "<group>";
 		};
 		75B3DE0A0887796100F6B90C = {
@@ -226,21 +160,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		75B3E30208897F2200F6B90C /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				75ADAEB62D8F4E7100322BC2 /* NSURL+FourCorners.h in Headers */,
-				7585A8461D307C4200F5C869 /* FourCorners.h in Headers */,
-				7585A8431D307C4200F5C869 /* FCLocation.h in Headers */,
-				7585A83F1D307C4200F5C869 /* FCFormatters.h in Headers */,
-				7585A8441D307C4200F5C869 /* FCLocationSource.h in Headers */,
-				75F2C1351F955BB800D4E241 /* FCAnnotation.h in Headers */,
-				75FF3DA61F6A39770035DE7D /* geohash.h in Headers */,
-				753DDCA61043B71200264D64 /* FCCoreLocationSource.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -248,7 +167,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 75B3E30908897F2300F6B90C /* Build configuration list for PBXNativeTarget "FourCorners" */;
 			buildPhases = (
-				75B3E30208897F2200F6B90C /* Headers */,
 				75B3E30308897F2200F6B90C /* Resources */,
 				75B3E30408897F2200F6B90C /* Sources */,
 				75B3E30508897F2200F6B90C /* Frameworks */,
@@ -257,6 +175,9 @@
 			);
 			dependencies = (
 				F0C0A1B2C3D4E5F6A7B8C902 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				75F00D000000000000000021 /* FourCorners */,
 			);
 			name = FourCorners;
 			productName = FourCorners.framework;
@@ -273,7 +194,6 @@
 				LastUpgradeCheck = 2710;
 			};
 			buildConfigurationList = 75B3DE0D0887796100F6B90C /* Build configuration list for PBXProject "FourCorners" */;
-			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -281,6 +201,7 @@
 				es,
 				Base,
 			);
+			preferredProjectObjectVersion = 77;
 			mainGroup = 75B3DE0A0887796100F6B90C;
 			productRefGroup = 75B3DE1E088779A800F6B90C /* Products */;
 			projectDirPath = "";
@@ -316,13 +237,6 @@
 			remoteRef = 7564E214225535F900545DAA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		7575B49F2DDE41C000154C49 /* ILFoundationSwift.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ILFoundationSwift.framework;
-			remoteRef = 7575B49E2DDE41C000154C49 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		75A73CB12DC029D000186BC3 /* ILFoundation.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -355,13 +269,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7585A8411D307C4200F5C869 /* FCLocation.m in Sources */,
-				75ADAEB72D8F4E7100322BC2 /* NSURL+FourCorners.m in Sources */,
-				7585A8401D307C4200F5C869 /* FCFormatters.m in Sources */,
-				753DDCA71043B71200264D64 /* FCCoreLocationSource.m in Sources */,
-				75FF3DA51F6A39770035DE7D /* geohash.c in Sources */,
-				75F2C1361F955BB800D4E241 /* FCAnnotation.m in Sources */,
-				7585A8451D307C4200F5C869 /* FCLocationSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,17 +399,16 @@
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
-				ENABLE_MODULE_VERIFIER = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 				FRAMEWORK_VERSION = A;
 				GCC_MODEL_TUNING = G4;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				INFOPLIST_FILE = Sources/FourCorners/Info.plist;
+				GENERATE_INFOPLIST_FILE = YES;
+				SWIFT_VERSION = 6.0;
 				INSTALL_PATH = "@rpath";
 				IPHONEOS_DEPLOYMENT_TARGET = "$(RECOMMENDED_IPHONEOS_DEPLOYMENT_TARGET)";
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
-				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
-				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++14";
 				OTHER_CFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = net.istumbler.fourcorners;
@@ -537,17 +443,16 @@
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
-				ENABLE_MODULE_VERIFIER = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 				FRAMEWORK_VERSION = A;
 				GCC_MODEL_TUNING = G4;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				INFOPLIST_FILE = Sources/FourCorners/Info.plist;
+				GENERATE_INFOPLIST_FILE = YES;
+				SWIFT_VERSION = 6.0;
 				INSTALL_PATH = "@rpath";
 				IPHONEOS_DEPLOYMENT_TARGET = "$(RECOMMENDED_IPHONEOS_DEPLOYMENT_TARGET)";
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
-				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
-				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++14";
 				OTHER_CFLAGS = "";
 				OTHER_REZFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = net.istumbler.fourcorners;

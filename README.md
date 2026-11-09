@@ -1,7 +1,7 @@
 <a id="fourcorners"></a>
 # FourCorners  
 
-Objective-C Location & Navigation Utilities
+Swift Location & Navigation Utilities
 
 <a id="contents"></a>
 ## Contents
@@ -9,9 +9,7 @@ Objective-C Location & Navigation Utilities
 - <a href="#goals">Goals</a>
 - <a href="#support">Support</a>
 - <a href="#classes">Classes</a>
-- <a href="#functions">Functions</a>
-- <a href="#protocols">Protocols</a>
-- <a href="#categories">Categories</a>
+- <a href="#extensions">Extensions</a>
 - <a href="#todo">To Do Items</a>
 - <a href="#versions">Versions</a>
 - <a href="#license">MIT License</a>
@@ -19,7 +17,7 @@ Objective-C Location & Navigation Utilities
 <a id="goals"></a>
 ## Goals
 
-FourCorners provides utilities to make working with CoreLocation easier along with Categories and Functions which make
+FourCorners provides utilities to make working with CoreLocation easier along with extensions and formatters which make
 displaying location information easier and more consistent.
 
 <a id="support"></a>
@@ -32,27 +30,26 @@ Visit our [Patreon Page](https://www.patreon.com/istumblerlabs) and patronize us
 <a id="classes"></a>
 ## Classes
 
-- <a id="FCAnnotation" href="./Sources/FCAnnotation.h">`FCAnnotation`</a>
-- <a id="FCFormatters" href="./Sources/FCFormatters.h">`FCFormatters`</a>
-- <a id="FCLocation" href="./Sources/FCLocation.h">`FCLocation`</a>
-- <a id="FCLocationSource" href="./Sources/FCLocationSource.h">`FCLocationSource`</a>
-    - <a id="FCCoreLocationSource" href="./Sources/FCCoreLocationSource.h">`FCCoreLocationSource`</a>
+- [`FCLocation`](./Sources/FourCorners/FCLocation.swift): a `CLLocation` with a name, URL, type and icon, the special
+  locations `nowhere`, `anywhere` and `restricted`, and initializers from NMEA strings, geohashes and geo `data:` URLs
+- [`FCLocationSource`](./Sources/FourCorners/FCLocationSource.swift): the base class of location sources,
+  `FCLocationSource.core` is the device's location from Core Location
+    - `FCCoreLocationSource`
+- [`FCAnnotation`](./Sources/FourCorners/FCAnnotation.swift): a map annotation of an object
+- [`FCFormatters`](./Sources/FourCorners/FCFormatters.swift): `CLLocationDistanceFormatter`, `CLLocationSpeedFormatter`,
+  `CLLocationCoordinateFormatter`, `CLLocationDirectionFormatter`, `CLLocationDirectionArrowFormatter`,
+  `CLLocationDirectionKanjiFormatter` and `FCLocationLogFormatter`
+- [`Geohash`](./Sources/FourCorners/Geohash.swift): encodes and decodes geohashes
 
-<a id="functions"></a>
-## Functions
+<a id="extensions"></a>
+## Extensions
 
-<a id="FCLocation-Functions" href="./Sources/FCLocation.h">`FCLocation`</a> provides a few public Functions:
-
-`extern CLLocationDirection FCRandomDirection(void);`
-
-`extern CLLocationDirection FCBearingFrom(CLLocationCoordinate2D origin, CLLocationCoordinate2D destination);`
-
-`extern CLLocationCoordinate2D FCCoordinateAtDistanceAndBearingFrom(CLLocationCoordinate2D start, CLLocationDistance distance, CLLocationDirection bearing);`
-
-<a id="categories"></a>
-## Categories
-
-<a id="FCLocation-Category" href="./Sources/FCLocation.h">`FCLocation`</a> defines a number of extensions to FCLocation.
+- `CLLocationCoordinate2D.bearing(to:)` and `coordinate(atDistance:bearing:)`
+- `CLLocation`: hemispheres, degrees, minutes and seconds, `direction(to:)`, `latLonString`, `altitudeString`,
+  `precisionString`, `coordinateString`, `nmeaString`, `geohash`, and the location notifications
+- `FCDirection`, `FCDistance`, `FCCardinal` and `FCCircularError` constants, `FCDirection.random()` and
+  `FCCircularError.convert(_:to:)`
+- `Notification.Name.FCLocationUpdate`, `.FCLocationTracked`, `.FCLocationForgotten` and `.FCLocationGeocoded`
  
 <a id="todo"></a>
 ## To Do Items
@@ -65,6 +62,19 @@ Visit our [Patreon Page](https://www.patreon.com/istumblerlabs) and patronize us
 <a id="versions"></a>
 ## Versions
 
+- 2.0.0 — Breaking API changes, FourCorners is written in Swift, with KitBridge 3.0
+    - Requires macOS 14, iOS 17, tvOS 17, watchOS 10 or visionOS 26
+    - The classes keep their Objective-C names, and `FCLocation` its archive format, for existing archives and soups
+    - `FCLocationSource.core`, `locationSources`, `knowsCurrentLocation`, `currentLocation` and `trackedLocations`
+      are properties
+    - Constants are in `FCDirection`, `FCDistance`, `FCCardinal`, `FCCircularError` and `FCLocation`, e.g.
+      `FCLocation.specialType` and `FCLocation.sourceKey`
+    - `coordinateLatLonString`, `coordinateNEMAString` and `coordinateGeoHash` are `latLonString`, `nmeaString` and
+      `geohash`, the boxed `altitudeValue`… properties are gone
+    - Fixes: minutes and seconds of coordinates are never negative, bearings convert degrees to radians, NMEA
+      strings are read with the right hemispheres, `init(geohash:)` returns the location, `FCCircularError` converts
+      distances, `CLLocationCoordinateFormatter` formats plain `CLLocation`s
+    - Tests run with `swift test`
 - 1.0.4 — 19 August 2024: Swift Package Manager Support
 - 103 / 103.3 — initial release
 
@@ -73,7 +83,7 @@ Visit our [Patreon Page](https://www.patreon.com/istumblerlabs) and patronize us
 
     The MIT License (MIT)
 
-    Copyright © 2017-2024 Alf Watt <alf@istumbler.net>
+    Copyright © 2017-2026 Alf Watt <alf@istumbler.net>
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
